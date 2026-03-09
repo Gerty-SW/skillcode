@@ -1,0 +1,989 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Styles Conference</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=cyrillic,latin">
+</head>
+<body>
+
+  <header class="primary-header container group">
+    <h1 class="logo">
+      <a href="index.html">Skill Code</a>
+    </h1>
+	
+    <h3 class="tagline"> </h3>
+	
+    <nav class="nav primary-nav">
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <!--
+        -->
+          <li><a href="speakers.html">HTML</a></li>
+          <!--
+        -->
+          <li><a href="schedule.html">CSS</a></li>
+          <!--
+        -->
+          <li><a href="venue.html">JAVASCRIPT</a></li>
+          <!--
+        --></ul>
+      </nav>
+  </header>
+
+    <section class="row">
+    <style>
+        body {
+            line-height: 1.6;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #f7df1e;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #444;
+            border-left: 5px solid #f7df1e;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 30px;
+        }
+        
+        /* Делаем заголовки жирными */
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 28px;
+        }
+        
+        h2 {
+            font-size: 24px;
+        }
+        
+        h3 {
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        /* Стили для блоков с кодом */
+        .code-block {
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 20px 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.45;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-left: 4px solid #f7df1e;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: #f8f8f2;
+        }
+        
+        /* Стили для тега code внутри блоков */
+        .code-block code {
+            font-family: inherit;
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            color: #f8f8f2;
+            display: block;
+        }
+        
+        /* Стили для строчного кода */
+        p code, li code {
+            background-color: #f3f4f6;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'SF Mono', Monaco, Consolas, 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d14;
+            border: 1px solid #e1e4e8;
+        }
+        
+        strong {
+            color: #222;
+        }
+        
+        /* Дополнительные стили для примеров */
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #f7df1e;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .demo-box {
+            background-color: #e9ecef;
+            border: 2px solid #f7df1e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .warning {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .tip {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        /* Подсветка синтаксиса в блоках кода */
+        .code-block .keyword { color: #66d9ef; }
+        .code-block .string { color: #e6db74; }
+        .code-block .number { color: #ae81ff; }
+        .code-block .comment { color: #75715e; }
+    </style>
+</head>
+<body>
+
+<h1>Полное руководство по JavaScript для начинающих</h1>
+
+<p><strong>JavaScript (JS)</strong> — это язык программирования, который делает веб-страницы живыми. Если HTML — это скелет, CSS — одежда, то JavaScript — это мышцы и мозг. С помощью JS мы можем реагировать на действия пользователя, изменять содержимое страницы, отправлять запросы на сервер и многое другое.</p>
+
+<div class="note">
+    <strong>Важно:</strong> JavaScript не имеет никакого отношения к языку Java. Это разные языки, которые объединяет только похожее название.
+</div>
+
+<p><strong>Как подключить JavaScript к HTML:</strong></p>
+<ul>
+    <li><strong>Внешний файл:</strong> <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></li>
+    <li><strong>Внутренний скрипт:</strong> <code>&lt;script&gt; ... код ... &lt;/script&gt;</code></li>
+</ul>
+
+<div class="warning">
+    <strong>Рекомендация:</strong> Размещайте тег <code>&lt;script&gt;</code> перед закрывающим тегом <code>&lt;/body&gt;</code>, чтобы скрипты не блокировали загрузку страницы.
+</div>
+
+<h2>Уровень 1: Основы синтаксиса</h2>
+
+<h3>1. Переменные и константы</h3>
+
+<p><strong>Переменные</strong> — это контейнеры для хранения данных. В JavaScript есть три способа объявления переменных:</p>
+
+<ul>
+    <li><strong><code>let</code></strong> — переменная, которую можно изменять (современный способ)</li>
+    <li><strong><code>const</code></strong> — константа, значение нельзя изменить</li>
+    <li><strong><code>var</code></strong> — устаревший способ (лучше не использовать)</li>
+</ul>
+
+<div class="code-block">
+<code><span class="keyword">let</span> name = <span class="string">"Анна"</span>;      <span class="comment">// строковая переменная</span><br>
+<span class="keyword">let</span> age = <span class="number">25</span>;          <span class="comment">// числовая переменная</span><br>
+<span class="keyword">const</span> PI = <span class="number">3.14159</span>;   <span class="comment">// константа (нельзя изменить)</span><br>
+<span class="keyword">let</span> isStudent = <span class="keyword">true</span>;   <span class="comment">// логическое значение (boolean)</span><br>
+<br>
+<span class="comment">// Изменяем значение переменной</span><br>
+age = <span class="number">26</span>;                   <span class="comment">// OK</span><br>
+<span class="comment">// PI = 3.14;               // Ошибка! const нельзя изменять</span></code>
+</div>
+
+<p><strong>Правила именования переменных:</strong></p>
+<ul>
+    <li>Имена могут содержать буквы, цифры, символы <code>$</code> и <code>_</code></li>
+    <li>Имя не может начинаться с цифры</li>
+    <li>Регистр имеет значение: <code>myName</code> и <code>myname</code> — разные переменные</li>
+    <li>Используйте <strong>camelCase</strong> для составных имен: <code>userName</code>, <code>firstName</code></li>
+</ul>
+
+<h3>2. Типы данных</h3>
+
+<p>В JavaScript есть 8 основных типов данных. Вот самые важные для начинающих:</p>
+
+<p><strong>Примитивные типы:</strong></p>
+<ul>
+    <li><strong><code>number</code></strong> — числа (целые и дробные)</li>
+    <li><strong><code>string</code></strong> — строки (текст)</li>
+    <li><strong><code>boolean</code></strong> — логические значения (<code>true</code>/<code>false</code>)</li>
+    <li><strong><code>undefined</code></strong> — значение не определено</li>
+    <li><strong><code>null</code></strong> — "ничего", пустое значение</li>
+</ul>
+
+<p><strong>Ссылочные типы:</strong></p>
+<ul>
+    <li><strong><code>object</code></strong> — объекты (сложные структуры)</li>
+    <li><strong><code>array</code></strong> — массивы (списки данных)</li>
+</ul>
+
+<div class="code-block">
+<code><span class="keyword">let</span> number = <span class="number">42</span>;                 <span class="comment">// number</span><br>
+<span class="keyword">let</span> float = <span class="number">3.14</span>;                <span class="comment">// тоже number</span><br>
+<span class="keyword">let</span> text = <span class="string">"Привет, мир!"</span>;        <span class="comment">// string</span><br>
+<span class="keyword">let</span> isTrue = <span class="keyword">true</span>;                <span class="comment">// boolean</span><br>
+<span class="keyword">let</span> notDefined;                     <span class="comment">// undefined</span><br>
+<span class="keyword">let</span> empty = <span class="keyword">null</span>;                  <span class="comment">// null</span><br>
+<br>
+<span class="comment">// Проверка типа данных</span><br>
+console.log(<span class="keyword">typeof</span> number);        <span class="comment">// "number"</span><br>
+console.log(<span class="keyword">typeof</span> text);          <span class="comment">// "string"</span></code>
+</div>
+
+<h3>3. Базовые операторы</h3>
+
+<p><strong>Арифметические операторы:</strong></p>
+<div class="code-block">
+<code><span class="keyword">let</span> a = <span class="number">10</span>;<br>
+<span class="keyword">let</span> b = <span class="number">3</span>;<br>
+<br>
+console.log(a + b);    <span class="comment">// 13 (сложение)</span><br>
+console.log(a - b);    <span class="comment">// 7 (вычитание)</span><br>
+console.log(a * b);    <span class="comment">// 30 (умножение)</span><br>
+console.log(a / b);    <span class="comment">// 3.333... (деление)</span><br>
+console.log(a % b);    <span class="comment">// 1 (остаток от деления)</span><br>
+console.log(a ** b);   <span class="comment">// 1000 (возведение в степень 10³)</span></code>
+</div>
+
+<p><strong>Операторы сравнения:</strong></p>
+<div class="code-block">
+<code>console.log(<span class="number">5</span> > <span class="number">3</span>);      <span class="comment">// true (больше)</span><br>
+console.log(<span class="number">5</span> < <span class="number">3</span>);      <span class="comment">// false (меньше)</span><br>
+console.log(<span class="number">5</span> >= <span class="number">5</span>);     <span class="comment">// true (больше или равно)</span><br>
+console.log(<span class="number">5</span> == <span class="string">"5"</span>);   <span class="comment">// true (нестрогое равенство, сравнивает значения)</span><br>
+console.log(<span class="number">5</span> === <span class="string">"5"</span>);  <span class="comment">// false (строгое равенство, сравнивает типы)</span><br>
+console.log(<span class="number">5</span> != <span class="string">"5"</span>);   <span class="comment">// false (нестрогое неравенство)</span><br>
+console.log(<span class="number">5</span> !== <span class="string">"5"</span>);  <span class="comment">// true (строгое неравенство)</span></code>
+</div>
+
+<div class="tip">
+    <strong>Совет:</strong> Всегда используйте строгое сравнение <code>===</code> и <code>!==</code>, чтобы избежать неожиданных ошибок.
+</div>
+
+<p><strong>Логические операторы:</strong></p>
+<div class="code-block">
+<code><span class="keyword">let</span> isLogged = <span class="keyword">true</span>;<br>
+<span class="keyword">let</span> isAdmin = <span class="keyword">false</span>;<br>
+<br>
+console.log(isLogged && isAdmin);    <span class="comment">// false (И — оба должны быть true)</span><br>
+console.log(isLogged || isAdmin);    <span class="comment">// true (ИЛИ — хотя бы один true)</span><br>
+console.log(!isLogged);              <span class="comment">// false (НЕ — отрицание)</span></code>
+</div>
+
+<h3>4. Взаимодействие с пользователем</h3>
+
+<p>Простые способы общения с пользователем:</p>
+
+<div class="code-block">
+<code><span class="comment">// Вывод сообщения</span><br>
+alert(<span class="string">"Привет, мир!"</span>);<br>
+<br>
+<span class="comment">// Запрос подтверждения</span><br>
+<span class="keyword">let</span> isAdult = confirm(<span class="string">"Вам есть 18 лет?"</span>);<br>
+console.log(isAdult);  <span class="comment">// true (если нажали OK) или false (если Отмена)</span><br>
+<br>
+<span class="comment">// Запрос ввода текста</span><br>
+<span class="keyword">let</span> name = prompt(<span class="string">"Как вас зовут?"</span>, <span class="string">"Гость"</span>);<br>
+console.log(<span class="string">"Привет, "</span> + name);<br>
+<br>
+<span class="comment">// Вывод в консоль (для разработчиков)</span><br>
+console.log(<span class="string">"Это сообщение видно в консоли браузера"</span>);</code>
+</div>
+
+<h2>Уровень 2: Управляющие конструкции</h2>
+
+<h3>5. Условные операторы</h3>
+
+<p><strong>if...else</strong> — выполняет код в зависимости от условия.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> age = <span class="number">17</span>;<br>
+<br>
+<span class="keyword">if</span> (age >= <span class="number">18</span>) {<br>
+    console.log(<span class="string">"Вы совершеннолетний"</span>);<br>
+} <span class="keyword">else</span> {<br>
+    console.log(<span class="string">"Вы несовершеннолетний"</span>);<br>
+}</code>
+</div>
+
+<p><strong>else if</strong> — несколько условий.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> score = <span class="number">85</span>;<br>
+<br>
+<span class="keyword">if</span> (score >= <span class="number">90</span>) {<br>
+    console.log(<span class="string">"Отлично!"</span>);<br>
+} <span class="keyword">else</span> <span class="keyword">if</span> (score >= <span class="number">75</span>) {<br>
+    console.log(<span class="string">"Хорошо"</span>);<br>
+} <span class="keyword">else</span> <span class="keyword">if</span> (score >= <span class="number">60</span>) {<br>
+    console.log(<span class="string">"Удовлетворительно"</span>);<br>
+} <span class="keyword">else</span> {<br>
+    console.log(<span class="string">"Нужно подучить"</span>);<br>
+}</code>
+</div>
+
+<p><strong>Тернарный оператор</strong> — сокращенная запись if...else.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> age = <span class="number">20</span>;<br>
+<span class="keyword">let</span> status = age >= <span class="number">18</span> ? <span class="string">"взрослый"</span> : <span class="string">"ребенок"</span>;<br>
+console.log(status);  <span class="comment">// "взрослый"</span></code>
+</div>
+
+<p><strong>switch</strong> — для множества конкретных значений.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> day = <span class="number">3</span>;<br>
+<span class="keyword">let</span> dayName;<br>
+<br>
+<span class="keyword">switch</span> (day) {<br>
+    <span class="keyword">case</span> <span class="number">1</span>:<br>
+        dayName = <span class="string">"Понедельник"</span>;<br>
+        <span class="keyword">break</span>;<br>
+    <span class="keyword">case</span> <span class="number">2</span>:<br>
+        dayName = <span class="string">"Вторник"</span>;<br>
+        <span class="keyword">break</span>;<br>
+    <span class="keyword">case</span> <span class="number">3</span>:<br>
+        dayName = <span class="string">"Среда"</span>;<br>
+        <span class="keyword">break</span>;<br>
+    <span class="keyword">default</span>:<br>
+        dayName = <span class="string">"Неизвестный день"</span>;<br>
+}<br>
+console.log(dayName);  <span class="comment">// "Среда"</span></code>
+</div>
+
+<h3>6. Циклы</h3>
+
+<p><strong>for</strong> — когда знаем количество повторений.</p>
+
+<div class="code-block">
+<code><span class="comment">// Вывод чисел от 1 до 5</span><br>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i <= <span class="number">5</span>; i++) {<br>
+    console.log(i);  <span class="comment">// 1, 2, 3, 4, 5</span><br>
+}<br>
+<br>
+<span class="comment">// i++ то же самое, что i = i + 1</span><br>
+<span class="comment">// Можно уменьшать: i--</span></code>
+</div>
+
+<p><strong>while</strong> — когда условие проверяется перед выполнением.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> i = <span class="number">1</span>;<br>
+<span class="keyword">while</span> (i <= <span class="number">5</span>) {<br>
+    console.log(i);<br>
+    i++;<br>
+}</code>
+</div>
+
+<p><strong>do...while</strong> — выполнится хотя бы один раз (условие проверяется после).</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> j = <span class="number">1</span>;<br>
+<span class="keyword">do</span> {<br>
+    console.log(j);<br>
+    j++;<br>
+} <span class="keyword">while</span> (j <= <span class="number">5</span>);</code>
+</div>
+
+<p><strong>break и continue</strong> — управление циклом.</p>
+
+<div class="code-block">
+<code><span class="comment">// break - прерывает цикл</span><br>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i <= <span class="number">10</span>; i++) {<br>
+    <span class="keyword">if</span> (i === <span class="number">5</span>) {<br>
+        <span class="keyword">break</span>;  <span class="comment">// остановится на 5</span><br>
+    }<br>
+    console.log(i);  <span class="comment">// 1, 2, 3, 4</span><br>
+}<br>
+<br>
+<span class="comment">// continue - пропускает итерацию</span><br>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i <= <span class="number">5</span>; i++) {<br>
+    <span class="keyword">if</span> (i === <span class="number">3</span>) {<br>
+        <span class="keyword">continue</span>;  <span class="comment">// пропускаем 3</span><br>
+    }<br>
+    console.log(i);  <span class="comment">// 1, 2, 4, 5</span><br>
+}</code>
+</div>
+
+<h2>Уровень 3: Функции</h2>
+
+<h3>7. Объявление функций</h3>
+
+<p><strong>Функции</strong> — это блоки кода, которые можно вызывать многократно.</p>
+
+<p><strong>Function Declaration (объявление функции):</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">function</span> greet(name) {<br>
+    <span class="keyword">return</span> <span class="string">"Привет, "</span> + name + <span class="string">"!"</span>;<br>
+}<br>
+<br>
+<span class="comment">// Вызов функции</span><br>
+<span class="keyword">let</span> message = greet(<span class="string">"Анна"</span>);<br>
+console.log(message);  <span class="comment">// "Привет, Анна!"</span></code>
+</div>
+
+<p><strong>Function Expression (функциональное выражение):</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">const</span> greet = <span class="keyword">function</span>(name) {<br>
+    <span class="keyword">return</span> <span class="string">"Привет, "</span> + name + <span class="string">"!"</span>;<br>
+};<br>
+<br>
+console.log(greet(<span class="string">"Иван"</span>));  <span class="comment">// "Привет, Иван!"</span></code>
+</div>
+
+<p><strong>Стрелочные функции (современный способ):</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">const</span> greet = (name) => {<br>
+    <span class="keyword">return</span> <span class="string">"Привет, "</span> + name + <span class="string">"!"</span>;<br>
+};<br>
+<br>
+<span class="comment">// Если функция возвращает значение сразу, можно сократить:</span><br>
+<span class="keyword">const</span> greetShort = name => <span class="string">"Привет, "</span> + name + <span class="string">"!"</span>;<br>
+<br>
+<span class="comment">// Если параметров несколько, нужны скобки:</span><br>
+<span class="keyword">const</span> sum = (a, b) => a + b;<br>
+<br>
+console.log(greet(<span class="string">"Мария"</span>));  <span class="comment">// "Привет, Мария!"</span><br>
+console.log(sum(<span class="number">5</span>, <span class="number">3</span>));       <span class="comment">// 8</span></code>
+</div>
+
+<h3>8. Параметры и аргументы</h3>
+
+<p><strong>Параметры по умолчанию:</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">function</span> greet(name = <span class="string">"Гость"</span>) {<br>
+    <span class="keyword">return</span> <span class="string">"Привет, "</span> + name + <span class="string">"!"</span>;<br>
+}<br>
+<br>
+console.log(greet());          <span class="comment">// "Привет, Гость!"</span><br>
+console.log(greet(<span class="string">"Анна"</span>));    <span class="comment">// "Привет, Анна!"</span></code>
+</div>
+
+<p><strong>Rest-параметры (...):</strong> собирают оставшиеся аргументы в массив.</p>
+
+<div class="code-block">
+<code><span class="keyword">function</span> sumAll(...numbers) {<br>
+    <span class="keyword">let</span> total = <span class="number">0</span>;<br>
+    <span class="keyword">for</span> (<span class="keyword">let</span> num <span class="keyword">of</span> numbers) {<br>
+        total += num;<br>
+    }<br>
+    <span class="keyword">return</span> total;<br>
+}<br>
+<br>
+console.log(sumAll(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>));        <span class="comment">// 6</span><br>
+console.log(sumAll(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>));  <span class="comment">// 100</span></code>
+</div>
+
+<h2>Уровень 4: Массивы</h2>
+
+<h3>9. Создание и базовые операции</h3>
+
+<p><strong>Массив</strong> — это упорядоченный список данных. Индексация начинается с 0.</p>
+
+<div class="code-block">
+<code><span class="comment">// Создание массивов</span><br>
+<span class="keyword">let</span> fruits = [<span class="string">"яблоко"</span>, <span class="string">"банан"</span>, <span class="string">"апельсин"</span>];<br>
+<span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];<br>
+<span class="keyword">let</span> mixed = [<span class="string">"текст"</span>, <span class="number">42</span>, <span class="keyword">true</span>, <span class="keyword">null</span>];  <span class="comment">// можно смешивать типы</span><br>
+<br>
+<span class="comment">// Доступ к элементам</span><br>
+console.log(fruits[<span class="number">0</span>]);     <span class="comment">// "яблоко" (первый элемент)</span><br>
+console.log(fruits[<span class="number">2</span>]);     <span class="comment">// "апельсин" (третий элемент)</span><br>
+console.log(fruits.length);  <span class="comment">// 3 (длина массива)</span><br>
+console.log(fruits[fruits.length - <span class="number">1</span>]);  <span class="comment">// последний элемент</span><br>
+<br>
+<span class="comment">// Изменение элементов</span><br>
+fruits[<span class="number">1</span>] = <span class="string">"груша"</span>;<br>
+console.log(fruits);  <span class="comment">// ["яблоко", "груша", "апельсин"]</span></code>
+</div>
+
+<h3>10. Методы массивов</h3>
+
+<p><strong>Добавление и удаление элементов:</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> fruits = [<span class="string">"яблоко"</span>, <span class="string">"банан"</span>];<br>
+<br>
+<span class="comment">// push - добавить в конец</span><br>
+fruits.push(<span class="string">"апельсин"</span>);<br>
+console.log(fruits);  <span class="comment">// ["яблоко", "банан", "апельсин"]</span><br>
+<br>
+<span class="comment">// pop - удалить с конца</span><br>
+<span class="keyword">let</span> last = fruits.pop();<br>
+console.log(last);    <span class="comment">// "апельсин"</span><br>
+console.log(fruits);  <span class="comment">// ["яблоко", "банан"]</span><br>
+<br>
+<span class="comment">// unshift - добавить в начало</span><br>
+fruits.unshift(<span class="string">"груша"</span>);<br>
+console.log(fruits);  <span class="comment">// ["груша", "яблоко", "банан"]</span><br>
+<br>
+<span class="comment">// shift - удалить с начала</span><br>
+<span class="keyword">let</span> first = fruits.shift();<br>
+console.log(first);   <span class="comment">// "груша"</span><br>
+console.log(fruits);  <span class="comment">// ["яблоко", "банан"]</span></code>
+</div>
+
+<p><strong>Перебор массивов:</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> fruits = [<span class="string">"яблоко"</span>, <span class="string">"банан"</span>, <span class="string">"апельсин"</span>];<br>
+<br>
+<span class="comment">// Цикл for</span><br>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i < fruits.length; i++) {<br>
+    console.log(fruits[i]);<br>
+}<br>
+<br>
+<span class="comment">// for...of (современный способ)</span><br>
+<span class="keyword">for</span> (<span class="keyword">let</span> fruit <span class="keyword">of</span> fruits) {<br>
+    console.log(fruit);<br>
+}<br>
+<br>
+<span class="comment">// forEach</span><br>
+fruits.forEach(<span class="keyword">function</span>(fruit, index) {<br>
+    console.log(index + <span class="string">": "</span> + fruit);<br>
+});<br>
+<br>
+<span class="comment">// Стрелочная функция с forEach</span><br>
+fruits.forEach((fruit, index) => {<br>
+    console.log(<span class="string">`<span class="keyword">${index}</span>: <span class="keyword">${fruit}</span>`</span>);<br>
+});</code>
+</div>
+
+<p><strong>Полезные методы:</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">3</span>];<br>
+<br>
+<span class="comment">// indexOf - поиск индекса элемента</span><br>
+console.log(numbers.indexOf(<span class="number">5</span>));     <span class="comment">// 1</span><br>
+console.log(numbers.indexOf(<span class="number">10</span>));    <span class="comment">// -1 (не найден)</span><br>
+<br>
+<span class="comment">// includes - проверка наличия</span><br>
+console.log(numbers.includes(<span class="number">8</span>));    <span class="comment">// true</span><br>
+console.log(numbers.includes(<span class="number">7</span>));    <span class="comment">// false</span><br>
+<br>
+<span class="comment">// slice - создает копию части массива</span><br>
+<span class="keyword">let</span> sliced = numbers.slice(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">// с индекса 1 до 3 (не включая)</span><br>
+console.log(sliced);  <span class="comment">// [5, 2]</span><br>
+<br>
+<span class="comment">// splice - изменяет массив (удаляет/добавляет)</span><br>
+<span class="keyword">let</span> removed = numbers.splice(<span class="number">2</span>, <span class="number">1</span>);  <span class="comment">// удалить 1 элемент с индекса 2</span><br>
+console.log(removed); <span class="comment">// [2]</span><br>
+console.log(numbers); <span class="comment">// [1, 5, 8, 3]</span><br>
+<br>
+<span class="comment">// join - объединяет в строку</span><br>
+<span class="keyword">let</span> str = fruits.join(<span class="string">", "</span>);<br>
+console.log(str);  <span class="comment">// "яблоко, банан, апельсин"</span></code>
+</div>
+
+<h3>11. Трансформация массивов</h3>
+
+<p><strong>map</strong> — создает новый массив, преобразуя каждый элемент.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];<br>
+<br>
+<span class="keyword">let</span> doubled = numbers.map(num => num * <span class="number">2</span>);<br>
+console.log(doubled);  <span class="comment">// [2, 4, 6, 8]</span><br>
+<br>
+<span class="keyword">let</span> strings = numbers.map(num => <span class="string">"Число: "</span> + num);<br>
+console.log(strings);  <span class="comment">// ["Число: 1", "Число: 2", "Число: 3", "Число: 4"]</span></code>
+</div>
+
+<p><strong>filter</strong> — создает новый массив с элементами, прошедшими проверку.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];<br>
+<br>
+<span class="keyword">let</span> even = numbers.filter(num => num % <span class="number">2</span> === <span class="number">0</span>);<br>
+console.log(even);  <span class="comment">// [2, 4, 6] (только четные)</span><br>
+<br>
+<span class="keyword">let</span> big = numbers.filter(num => num > <span class="number">3</span>);<br>
+console.log(big);   <span class="comment">// [4, 5, 6]</span></code>
+</div>
+
+<p><strong>reduce</strong> — сворачивает массив в одно значение.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];<br>
+<br>
+<span class="keyword">let</span> sum = numbers.reduce((accumulator, current) => accumulator + current, <span class="number">0</span>);<br>
+console.log(sum);  <span class="comment">// 10</span><br>
+<br>
+<span class="comment">// accumulator - накопленный результат</span><br>
+<span class="comment">// current - текущий элемент</span><br>
+<span class="comment">// 0 - начальное значение аккумулятора</span></code>
+</div>
+
+<p><strong>sort</strong> — сортирует массив.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> fruits = [<span class="string">"банан"</span>, <span class="string">"яблоко"</span>, <span class="string">"апельсин"</span>];<br>
+fruits.sort();<br>
+console.log(fruits);  <span class="comment">// ["апельсин", "банан", "яблоко"] (по алфавиту)</span><br>
+<br>
+<span class="keyword">let</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">1</span>];<br>
+numbers.sort((a, b) => a - b);  <span class="comment">// для чисел</span><br>
+console.log(numbers);  <span class="comment">// [1, 2, 4, 10]</span></code>
+</div>
+
+<h2>Уровень 5: Объекты</h2>
+
+<h3>12. Создание объектов</h3>
+
+<p><strong>Объекты</strong> хранят данные в формате "ключ-значение".</p>
+
+<div class="code-block">
+<code><span class="comment">// Создание объекта</span><br>
+<span class="keyword">let</span> user = {<br>
+    name: <span class="string">"Анна"</span>,<br>
+    age: <span class="number">25</span>,<br>
+    isAdmin: <span class="keyword">true</span>,<br>
+    <span class="string">"likes cats"</span>: <span class="keyword">true</span>   <span class="comment">// если ключ с пробелом, нужны кавычки</span><br>
+};<br>
+<br>
+<span class="comment">// Доступ к свойствам</span><br>
+console.log(user.name);           <span class="comment">// "Анна" (точечная нотация)</span><br>
+console.log(user[<span class="string">"age"</span>]);        <span class="comment">// 25 (скобочная нотация)</span><br>
+console.log(user[<span class="string">"likes cats"</span>]); <span class="comment">// true (только скобочная)</span><br>
+<br>
+<span class="comment">// Изменение свойств</span><br>
+user.age = <span class="number">26</span>;<br>
+user.city = <span class="string">"Москва"</span>;  <span class="comment">// добавление нового свойства</span><br>
+<br>
+<span class="comment">// Удаление свойств</span><br>
+<span class="keyword">delete</span> user.isAdmin;<br>
+<br>
+console.log(user);</code>
+</div>
+
+<h3>13. Методы объектов</h3>
+
+<p><strong>Методы</strong> — это функции, которые являются свойствами объекта.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> user = {<br>
+    name: <span class="string">"Анна"</span>,<br>
+    age: <span class="number">25</span>,<br>
+    <span class="comment">// Метод (старый синтаксис)</span><br>
+    sayHi: <span class="keyword">function</span>() {<br>
+        console.log(<span class="string">"Привет, я "</span> + <span class="keyword">this</span>.name);<br>
+    },<br>
+    <span class="comment">// Современный синтаксис методов</span><br>
+    sayAge() {<br>
+        console.log(<span class="string">"Мне "</span> + <span class="keyword">this</span>.age + <span class="string">" лет"</span>);<br>
+    }<br>
+};<br>
+<br>
+user.sayHi();   <span class="comment">// "Привет, я Анна"</span><br>
+user.sayAge();  <span class="comment">// "Мне 25 лет"</span></code>
+</div>
+
+<p><strong>Ключевое слово <code>this</code></strong> ссылается на текущий объект.</p>
+
+<h3>14. Перебор объектов</h3>
+
+<div class="code-block">
+<code><span class="keyword">let</span> user = {<br>
+    name: <span class="string">"Анна"</span>,<br>
+    age: <span class="number">25</span>,<br>
+    city: <span class="string">"Москва"</span><br>
+};<br>
+<br>
+<span class="comment">// for...in - перебор ключей</span><br>
+<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> user) {<br>
+    console.log(key);            <span class="comment">// name, age, city</span><br>
+    console.log(user[key]);      <span class="comment">// Анна, 25, Москва</span><br>
+}<br>
+<br>
+<span class="comment">// Object.keys() - получаем массив ключей</span><br>
+<span class="keyword">let</span> keys = Object.keys(user);<br>
+console.log(keys);  <span class="comment">// ["name", "age", "city"]</span><br>
+<br>
+<span class="comment">// Object.values() - массив значений</span><br>
+<span class="keyword">let</span> values = Object.values(user);<br>
+console.log(values);  <span class="comment">// ["Анна", 25, "Москва"]</span><br>
+<br>
+<span class="comment">// Object.entries() - массив пар [ключ, значение]</span><br>
+<span class="keyword">let</span> entries = Object.entries(user);<br>
+console.log(entries);  <span class="comment">// [["name", "Анна"], ["age", 25], ["city", "Москва"]]</span></code>
+</div>
+
+<h3>15. Копирование и ссылки</h3>
+
+<p><strong>Важно:</strong> Объекты хранятся по ссылке.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> user1 = { name: <span class="string">"Анна"</span> };<br>
+<span class="keyword">let</span> user2 = user1;  <span class="comment">// копируется ссылка, а не объект</span><br>
+<br>
+user2.name = <span class="string">"Мария"</span>;<br>
+console.log(user1.name);  <span class="comment">// "Мария" - изменилось и в user1!</span><br>
+<br>
+<span class="comment">// Как правильно копировать объекты</span><br>
+<span class="keyword">let</span> user3 = { name: <span class="string">"Анна"</span>, age: <span class="number">25</span> };<br>
+<br>
+<span class="comment">// Способ 1: Object.assign</span><br>
+<span class="keyword">let</span> copy1 = Object.assign({}, user3);<br>
+<br>
+<span class="comment">// Способ 2: spread-оператор (современный)</span><br>
+<span class="keyword">let</span> copy2 = { ...user3 };<br>
+<br>
+copy2.name = <span class="string">"Мария"</span>;<br>
+console.log(user3.name);  <span class="comment">// "Анна" - не изменилось!</span></code>
+</div>
+
+<h2>Уровень 6: Продвинутые концепции</h2>
+
+<h3>16. Шаблонные строки</h3>
+
+<p><strong>Шаблонные строки</strong> (обратные кавычки) позволяют вставлять переменные в строку.</p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> name = <span class="string">"Анна"</span>;<br>
+<span class="keyword">let</span> age = <span class="number">25</span>;<br>
+<br>
+<span class="comment">// Старый способ</span><br>
+console.log(<span class="string">"Меня зовут "</span> + name + <span class="string">", мне "</span> + age + <span class="string">" лет"</span>);<br>
+<br>
+<span class="comment">// Новый способ (шаблонные строки)</span><br>
+console.log(<span class="string">`Меня зовут <span class="keyword">${name}</span>, мне <span class="keyword">${age}</span> лет`</span>);<br>
+<br>
+<span class="comment">// Можно выполнять выражения</span><br>
+console.log(<span class="string">`Через 5 лет мне будет <span class="keyword">${age + 5}</span> лет`</span>);<br>
+<br>
+<span class="comment">// Многострочные строки</span><br>
+<span class="keyword">let</span> text = <span class="string">`Первая строка<br>
+Вторая строка<br>
+Третья строка`</span>;</code>
+</div>
+
+<h3>17. Деструктуризация</h3>
+
+<p><strong>Деструктуризация</strong> позволяет удобно извлекать значения из массивов и объектов.</p>
+
+<p><strong>Деструктуризация массивов:</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> fruits = [<span class="string">"яблоко"</span>, <span class="string">"банан"</span>, <span class="string">"апельсин"</span>];<br>
+<br>
+<span class="comment">// Старый способ</span><br>
+<span class="keyword">let</span> first = fruits[<span class="number">0</span>];<br>
+<span class="keyword">let</span> second = fruits[<span class="number">1</span>];<br>
+<br>
+<span class="comment">// Деструктуризация</span><br>
+<span class="keyword">let</span> [a, b, c] = fruits;<br>
+console.log(a);  <span class="comment">// "яблоко"</span><br>
+console.log(b);  <span class="comment">// "банан"</span><br>
+console.log(c);  <span class="comment">// "апельсин"</span><br>
+<br>
+<span class="comment">// Можно пропускать элементы</span><br>
+<span class="keyword">let</span> [firstFruit, , thirdFruit] = fruits;<br>
+console.log(firstFruit);  <span class="comment">// "яблоко"</span><br>
+console.log(thirdFruit);  <span class="comment">// "апельсин"</span><br>
+<br>
+<span class="comment">// Значения по умолчанию</span><br>
+<span class="keyword">let</span> [x, y, z, w = <span class="string">"виноград"</span>] = fruits;<br>
+console.log(w);  <span class="comment">// "виноград" (значение по умолчанию)</span></code>
+</div>
+
+<p><strong>Деструктуризация объектов:</strong></p>
+
+<div class="code-block">
+<code><span class="keyword">let</span> user = {<br>
+    name: <span class="string">"Анна"</span>,<br>
+    age: <span class="number">25</span>,<br>
+    city: <span class="string">"Москва"</span><br>
+};<br>
+<br>
+<span class="comment">// Деструктуризация</span><br>
+<span class="keyword">let</span> { name, age, city } = user;<br>
+console.log(name);  <span class="comment">// "Анна"</span><br>
+console.log(age);   <span class="comment">// 25</span><br>
+<br>
+<span class="comment">// Переименование переменных</span><br>
+<span class="keyword">let</span> { name: userName, age: userAge } = user;<br>
+console.log(userName);  <span class="comment">// "Анна"</span><br>
+<br>
+<span class="comment">// Значения по умолчанию</span><br>
+<span class="keyword">let</span> { country = <span class="string">"Россия"</span> } = user;<br>
+console.log(country);  <span class="comment">// "Россия"</span></code>
+</div>
+
+<h3>18. Spread и Rest операторы</h3>
+
+<p><strong>Spread (...)</strong> — разворачивает массив или объект.</p>
+
+<div class="code-block">
+<code><span class="comment">// Spread для массивов</span><br>
+<span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];<br>
+<span class="keyword">let</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];<br>
+<br>
+<span class="keyword">let</span> combined = [...arr1, ...arr2];<br>
+console.log(combined);  <span class="comment">// [1, 2, 3, 4, 5, 6]</span><br>
+<br>
+<span class="comment">// Копирование массива</span><br>
+<span class="keyword">let</span> copy = [...arr1];<br>
+<br>
+<span class="comment">// Spread для объектов</span><br>
+<span class="keyword">let</span> user = { name: <span class="string">"Анна"</span>, age: <span class="number">25</span> };<br>
+<span class="keyword">let</span> withCity = { ...user, city: <span class="string">"Москва"</span> };<br>
+console.log(withCity);  <span class="comment">// { name: "Анна", age: 25, city: "Москва" }</span><br>
+<br>
+<span class="comment">// Spread в вызовах функций</span><br>
+<span class="keyword">function</span> sum(a, b, c) {<br>
+    <span class="keyword">return</span> a + b + c;<br>
+}<br>
+<span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];<br>
+console.log(sum(...numbers));  <span class="comment">// 6</span></code>
+</div>
+
+<p><strong>Rest (...)</strong> — собирает оставшиеся аргументы.</p>
+
+<div class="code-block">
+<code><span class="comment">// Rest с массивами</span><br>
+<span class="keyword">let</span> [first, ...rest] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];<br>
+console.log(first);  <span class="comment">// 1</span><br>
+console.log(rest);   <span class="comment">// [2, 3, 4, 5]</span><br>
+<br>
+<span class="comment">// Rest с объектами</span><br>
+<span class="keyword">let</span> { name, ...info } = { name: <span class="string">"Анна"</span>, age: <span class="number">25</span>, city: <span class="string">"Москва"</span> };<br>
+console.log(name);  <span class="comment">// "Анна"</span><br>
+console.log(info);  <span class="comment">// { age: 25, city: "Москва" }</span></code>
+</div>
+
+<h2>Бонус-трек: Работа с DOM</h2>
+
+<h3>19. Поиск элементов</h3>
+
+<p><strong>DOM (Document Object Model)</strong> — это представление HTML-страницы в виде объектов, с которыми можно работать из JavaScript.</p>
+
+<div class="code-block">
+<code><span class="comment">// Поиск по ID</span><br>
+<span class="keyword">let</span> header = document.getElementById(<span class="string">'header'</span>);<br>
+<br>
+<span class="comment">// Поиск по классу</span><br>
+<span class="keyword">let</span> items = document.getElementsByClassName(<span class="string">'item'</span>);<br>
+<br>
+<span class="comment">// Поиск по тегу</span><br>
+<span class="keyword">let</span> paragraphs = document.getElementsByTagName(<span class="string">'p'</span>);<br>
+<br>
+<span class="comment">// Современные методы (рекомендуется)</span><br>
+<span class="keyword">let</span> element = document.querySelector(<span class="string">'.menu'</span>);      <span class="comment">// первый элемент</span><br>
+<span class="keyword">let</span> elements = document.querySelectorAll(<span class="string">'.item'</span>);  <span class="comment">// все элементы</span></code>
+</div>
+
+<h3>20. Изменение содержимого</h3>
+
+<div class="code-block">
+<code><span class="comment">// Изменение текста</span><br>
+element.textContent = <span class="string">"Новый текст"</span>;<br>
+<br>
+<span class="comment">// Изменение HTML</span><br>
+element.innerHTML = <span class="string">"&lt;strong&gt;Жирный текст&lt;/strong&gt;"</span>;<br>
+<br>
+<span class="comment">// Изменение стилей</span><br>
+element.style.color = <span class="string">"red"</span>;<br>
+element.style.fontSize = <span class="string">"20px"</span>;<br>
+<br>
+<span class="comment">// Добавление/удаление классов</span><br>
+element.classList.add(<span class="string">'active'</span>);<br>
+element.classList.remove(<span class="string">'hidden'</span>);<br>
+element.classList.toggle(<span class="string">'visible'</span>);  <span class="comment">// переключает класс</span></code>
+</div>
+
+<h3>21. Обработка событий</h3>
+
+<div class="code-block">
+<code><span class="comment">// Навешиваем обработчик события</span><br>
+<span class="keyword">let</span> button = document.querySelector(<span class="string">'#myButton'</span>);<br>
+<br>
+button.addEventListener(<span class="string">'click'</span>, <span class="keyword">function</span>() {<br>
+    alert(<span class="string">'Кнопка нажата!'</span>);<br>
+});<br>
+<br>
+<span class="comment">// Со стрелочной функцией</span><br>
+button.addEventListener(<span class="string">'click'</span>, () => {<br>
+    console.log(<span class="string">'Клик!'</span>);<br>
+});<br>
+<br>
+<span class="comment">// Другие события</span><br>
+element.addEventListener(<span class="string">'mouseover'</span>, handler);  <span class="comment">// наведение мыши</span><br>
+element.addEventListener(<span class="string">'mouseout'</span>, handler);   <span class="comment">// уход мыши</span><br>
+input.addEventListener(<span class="string">'input'</span>, handler);        <span class="comment">// ввод текста</span><br>
+window.addEventListener(<span class="string">'scroll'</span>, handler);       <span class="comment">// скролл</span></code>
+</div>
+
+<h2>Что дальше?</h2>
+
+<p>Поздравляем! Вы изучили основы JavaScript. Теперь вы можете:</p>
+<ul>
+    <li><strong>Изучить асинхронность</strong> — промисы, async/await, fetch-запросы</li>
+    <li><strong>Освоить современные фреймворки</strong> — React, Vue, Angular</li>
+    <li><strong>Изучить Node.js</strong> — JavaScript на сервере</li>
+    <li><strong>Практиковаться на реальных проектах</strong> — создавайте интерактивные сайты</li>
+</ul>
+
+<div class="tip">
+    <strong>Совет:</strong> Лучший способ выучить JavaScript — писать код каждый день. Начните с простых скриптов, затем переходите к небольшим проектам: калькулятор, список задач, игра "Крестики-нолики".
+</div>
+
+<div class="demo-box">
+    <strong>JavaScript — это не страшно, это просто требует практики!</strong>
+</div>
+    </section>  
+  
+  <footer class="primary-footer container group">
+    <small>&copy; Skill Code</small>
+    <nav class="nav">
+     <ul>
+          <li><a href="index.html">Главная</a></li>
+          <!--
+        -->
+          <li><a href="speakers.html">HTML</a></li>
+          <!--
+        -->
+          <li><a href="schedule.html">CSS</a></li>
+          <!--
+        -->
+          <li><a href="venue.html">JAVASCRIPT</a></li>
+          <!--
+        --></ul>
+	</nav>
+  </footer>
+	 
+</body>
+</html>

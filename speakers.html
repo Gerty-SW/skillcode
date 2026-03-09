@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Styles Conference</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=cyrillic,latin">
+</head>
+<body>
+
+  <header class="primary-header container group">
+    <h1 class="logo">
+      <a href="index.html">Skill Code</a>
+    </h1>
+	
+    <h3 class="tagline"> </h3>
+	
+    <nav class="nav primary-nav">
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <!--
+        -->
+          <li><a href="speakers.html">HTML</a></li>
+          <!--
+        -->
+          <li><a href="schedule.html">CSS</a></li>
+          <!--
+        -->
+          <li><a href="venue.html">JAVASCRIPT</a></li>
+          <!--
+        --></ul>
+      </nav>
+  </header>
+
+  <section class="row">
+    <style>
+        body {
+            line-height: 1.6;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #444;
+            border-left: 5px solid #007bff;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 30px;
+        }
+        
+        /* Делаем заголовки жирными */
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 28px;
+        }
+        
+        h2 {
+            font-size: 24px;
+        }
+        
+        h3 {
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        /* Стили для блоков с кодом */
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 20px 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.45;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        /* Стили для тега code внутри блоков */
+        .code-block code {
+            font-family: inherit;
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            color: #24292e;
+            display: block;
+        }
+        
+        /* Стили для строчного кода */
+        p code, li code {
+            background-color: #f3f4f6;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'SF Mono', Monaco, Consolas, 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d14;
+            border: 1px solid #e1e4e8;
+        }
+        
+        strong {
+            color: #222;
+        }
+    </style>
+</head>
+
+<h1>Полное руководство по HTML для начинающих</h1>
+
+<h2>Уровень 1: Фундамент (Самые основы)</h2>
+
+<h3>1. Что такое HTML и структура документа</h3>
+
+<p><strong>HTML (HyperText Markup Language — язык гипертекстовой разметки)</strong> — это скелет любой веб-страницы. Если сравнивать сайт с домом, то HTML — это фундамент, стены и перекрытия. Картинки, цвета и кнопки на места расставляют другие инструменты (CSS и JavaScript), но база создается именно здесь.</p>
+
+<p><strong>Главные понятия: теги и контейнеры.</strong> Всё в HTML строится на тегах. Тег — это команда для браузера, заключенная в угловые скобки: <code>&lt;название_тега&gt;</code>. Обычно теги парные: <code>&lt;тег&gt;</code> — открывающий (начало действия), <code>&lt;/тег&gt;</code> — закрывающий (конец действия).</p>
+
+<div class="code-block">
+<code>&lt;p&gt;Это абзац текста&lt;/p&gt;</code>
+</div>
+
+<p><strong>Базовая структура любой HTML-страницы:</strong> каждый HTML-документ должен иметь обязательный каркас.</p>
+
+<div class="code-block">
+<code>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="ru"&gt;<br>
+&lt;head&gt;<br>
+    &lt;meta charset="UTF-8"&gt;<br>
+    &lt;title&gt;Моя первая страница&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+    Здесь будет видимая часть сайта.<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code>
+</div>
+
+<p><strong><code>&lt;!DOCTYPE html&gt;</code></strong> — служебная инструкция. Она говорит браузеру: используй самый современный стандарт HTML, не включай древний режим совместимости. <strong><code>&lt;html&gt;</code></strong> — корневой тег, внутри которого находится вся страница. Атрибут <code>lang="ru"</code> указывает, что язык страницы — русский. <strong><code>&lt;head&gt;</code></strong> — голова страницы. Здесь хранится служебная информация, которая не видна на экране (кроме заголовка вкладки). <strong><code>&lt;meta charset="UTF-8"&gt;</code></strong> — тег мета-информации. <code>charset="UTF-8"</code> говорит браузеру, что текст нужно отображать в кодировке Unicode, чтобы не было кракозябр вместо букв. <strong><code>&lt;title&gt;</code></strong> — то, что вы видите на вкладке браузера. Очень важен для поисковиков. <strong><code>&lt;body&gt;</code></strong> — тело страницы. Всё, что написано здесь, пользователь видит на экране.</p>
+
+<h3>2. Основные теги для текста</h3>
+
+<p>Интернет на 90% состоит из текста, поэтому эти теги вы будете использовать чаще всего. <strong>Заголовки (<code>&lt;h1&gt;</code> — <code>&lt;h6&gt;</code>):</strong> заголовки нужны, чтобы выделять разделы. У них есть своя иерархия важности, как в книге.</p>
+<ul>
+    <li><strong><code>&lt;h1&gt;</code></strong> — Самый главный заголовок страницы. Он должен быть один (как название книги).</li>
+    <li><strong><code>&lt;h2&gt;</code></strong> — Заголовки разделов (как названия глав).</li>
+    <li><strong><code>&lt;h3&gt;</code></strong> — Подразделы внутри глав.</li>
+    <li>И так до <strong><code>&lt;h6&gt;</code></strong>.</li>
+</ul>
+
+<div class="code-block">
+<code>&lt;h1&gt;Это главный заголовок страницы&lt;/h1&gt;<br>
+&lt;h2&gt;Это большой раздел&lt;/h2&gt;<br>
+&lt;h3&gt;Это подтема&lt;/h3&gt;</code>
+</div>
+
+<p><strong>Параграфы (<code>&lt;p&gt;</code>):</strong> оборачивайте каждый абзац текста в тег <code>&lt;p&gt;</code>. Браузер автоматически добавит отступы сверху и снизу.</p>
+
+<div class="code-block">
+<code>&lt;p&gt;Это первый абзац. Здесь много текста, и он отделен от другого абзаца пустой строкой (отступом).&lt;/p&gt;<br>
+&lt;p&gt;Это второй абзац. Текст не сливается в одну сплошную стену.&lt;/p&gt;</code>
+</div>
+
+<p><strong>Форматирование текста:</strong> иногда нужно выделить слово жирным или курсивом. Для этого есть логические теги (они не просто меняют внешний вид, но и придают смысл):</p>
+<ul>
+    <li><strong><code>&lt;strong&gt;</code></strong> — важность (жирный текст).</li>
+    <li><strong><code>&lt;em&gt;</code></strong> — смысловое ударение (курсив).</li>
+</ul>
+
+<div class="code-block">
+<code>&lt;p&gt;Это &lt;strong&gt;очень важное&lt;/strong&gt; предупреждение. И &lt;em&gt;именно это&lt;/em&gt; нужно запомнить.&lt;/p&gt;</code>
+</div>
+
+<h3>3. Списки</h3>
+
+<p>Списки бывают маркированные (буллиты) и нумерованные. <strong>Маркированный список (<code>&lt;ul&gt;</code> — Unordered List)</strong> используется, когда порядок элементов не важен (например, список продуктов).</p>
+
+<div class="code-block">
+<code>&lt;ul&gt;<br>
+    &lt;li&gt;Молоко&lt;/li&gt;<br>
+    &lt;li&gt;Хлеб&lt;/li&gt;<br>
+    &lt;li&gt;Яблоки&lt;/li&gt;<br>
+&lt;/ul&gt;</code>
+</div>
+
+<p><strong>Результат:</strong> Молоко, Хлеб, Яблоки (каждый с новой строки с маркером).</p>
+
+<p><strong>Нумерованный список (<code>&lt;ol&gt;</code> — Ordered List)</strong> используется, когда важен порядок (например, инструкция или рейтинг).</p>
+
+<div class="code-block">
+<code>&lt;ol&gt;<br>
+    &lt;li&gt;Включить компьютер&lt;/li&gt;<br>
+    &lt;li&gt;Открыть браузер&lt;/li&gt;<br>
+    &lt;li&gt;Зайти на сайт&lt;/li&gt;<br>
+&lt;/ol&gt;</code>
+</div>
+
+<p><strong>Результат:</strong> 1. Включить компьютер, 2. Открыть браузер, 3. Зайти на сайт.</p>
+
+<p><strong>Вложенные списки:</strong> внутри пункта списка (<code>&lt;li&gt;</code>) можно создать еще один список. Так делают меню или сложные структуры.</p>
+
+<div class="code-block">
+<code>&lt;ul&gt;<br>
+    &lt;li&gt;Пункт 1&lt;/li&gt;<br>
+    &lt;li&gt;Пункт 2<br>
+        &lt;ul&gt;<br>
+            &lt;li&gt;Подпункт 2.1&lt;/li&gt;<br>
+            &lt;li&gt;Подпункт 2.2&lt;/li&gt;<br>
+        &lt;/ul&gt;<br>
+    &lt;/li&gt;<br>
+    &lt;li&gt;Пункт 3&lt;/li&gt;<br>
+&lt;/ul&gt;</code>
+</div>
+
+<h2>Уровень 2: Связи и адресация</h2>
+
+<h3>4. Ссылки (<code>&lt;a&gt;</code>)</h3>
+
+<p>Ссылки — это то, что делает интернет паутиной. Тег ссылки называется <strong>a</strong> (от слова anchor — якорь). <strong>Главный атрибут: href.</strong> В нем указывается адрес, куда ведет ссылка.</p>
+
+<div class="code-block">
+<code>&lt;a href="https://www.google.com"&gt;Перейти на Google&lt;/a&gt;</code>
+</div>
+
+<p><strong>Относительные и абсолютные пути:</strong></p>
+<ul>
+    <li><strong>Абсолютные:</strong> полный адрес, начинается с <code>http://</code> или <code>https://</code>. Ведет на другой сайт.</li>
+    <li><strong>Относительные:</strong> путь внутри вашего сайта. Например, <code>href="page2.html"</code> или <code>href="images/cat.jpg"</code>.</li>
+</ul>
+
+<p><strong>Открытие в новой вкладке (<code>target="_blank"</code>):</strong> по умолчанию ссылка открывается в той же вкладке. Чтобы открыть в новой, добавьте атрибут target:</p>
+
+<div class="code-block">
+<code>&lt;a href="https://yandex.ru" target="_blank"&gt;Яндекс (откроется в новом окне)&lt;/a&gt;</code>
+</div>
+
+<p><strong>Якоря (ссылки внутри страницы):</strong> если страница очень длинная, можно сделать навигацию по её разделам. Сначала ставим якорь — место, куда прыгать. Для этого нужен атрибут id (уникальный идентификатор).</p>
+
+<div class="code-block">
+<code>&lt;h2 id="chapter5"&gt;Глава 5&lt;/h2&gt;</code>
+</div>
+
+<p>Затем делаем ссылку на этот якорь, используя символ решетки #.</p>
+
+<div class="code-block">
+<code>&lt;a href="#chapter5"&gt;Перейти к Главе 5&lt;/a&gt;</code>
+</div>
+
+<h3>5. Изображения (<code>&lt;img&gt;</code>)</h3>
+
+<p>Тег <code>&lt;img&gt;</code> уникален тем, что он <strong>одиночный</strong> (не требует закрывающего тега). Он сам вставляет картинку в то место, где написан. <strong>Обязательные атрибуты:</strong></p>
+<ul>
+    <li><strong>src</strong> (source) — путь к файлу картинки.</li>
+    <li><strong>alt</strong> (alternative text) — текстовое описание. Оно покажется, если картинка не загрузится, и очень важно для незрячих людей (читалки озвучивают этот текст).</li>
+</ul>
+
+<div class="code-block">
+<code>&lt;img src="images/kotik.jpg" alt="Рыжий кот лежит на диване"&gt;</code>
+</div>
+
+<p><strong>Размеры (необязательно, но полезно):</strong> можно задать ширину и высоту в пикселях. Если указать только ширину, высота подстроится автоматически, чтобы не нарушить пропорции.</p>
+
+<div class="code-block">
+<code>&lt;img src="images/kotik.jpg" alt="Кот" width="300"&gt;</code>
+</div>
+
+<h2>Уровень 3: Продвинутая структура (DOM и компоновка)</h2>
+
+<h3>6. Структура DOM</h3>
+
+<p><strong>DOM (Document Object Model)</strong> — это модель документа. Представьте, что вы разобрали HTML-код на дерево, где каждая ветка — это тег, а маленькие веточки — теги внутри него.</p>
+
+<p><strong>Родители и дети:</strong> тег, внутри которого находятся другие — родитель. Теги, лежащие внутри родителя — дети. Теги внутри детей — внуки (или потомки).</p>
+
+<div class="code-block">
+<code>&lt;div&gt; &lt;!-- Это родитель --&gt;<br>
+    &lt;p&gt; &lt;!-- Это ребенок div, и родитель для span --&gt;<br>
+        Текст &lt;span&gt;внутри&lt;/span&gt; параграфа. &lt;!-- span — внук для div --&gt;<br>
+    &lt;/p&gt;<br>
+&lt;/div&gt;</code>
+</div>
+
+<p>Понимание этой иерархии критически важно, когда мы дойдем до CSS и JavaScript, чтобы обращаться к конкретным элементам.</p>
+
+<p><strong>Блочные vs Строчные элементы:</strong> это деление очень важно для верстки.</p>
+<ul>
+    <li><strong>Блочные (<code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>):</strong> занимают всю доступную ширину. Каждый новый блочный элемент начинается с новой строки. Как кирпичи, лежащие друг на друге.</li>
+    <li><strong>Строчные (<code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>):</strong> занимают только то место, которое нужно их содержимому. Они располагаются в строку друг за другом, как слова в предложении. Перенос на новую строку происходит, только если не хватает места.</li>
+</ul>
+
+<p><strong><code>&lt;div&gt;</code> и <code>&lt;span&gt;</code></strong> — это универсальные контейнеры (пустые коробки), которые нужны для группировки элементов, чтобы потом их стилизовать или двигать.</p>
+
+<h3>7. Семантическая верстка</h3>
+
+<p>Раньше люди верстали сайты одними <code>&lt;div&gt;</code>-ами. Это работало, но компьютеру было сложно понять, где шапка, а где подвал. Семантические теги решают эту проблему.</p>
+
+<ul>
+    <li><strong><code>&lt;header&gt;</code></strong> — Шапка сайта или раздела. Обычно там логотип и меню.</li>
+    <li><strong><code>&lt;nav&gt;</code></strong> — Блок навигации (меню со ссылками).</li>
+    <li><strong><code>&lt;main&gt;</code></strong> — Главное уникальное содержимое страницы (то, что не повторяется на других страницах).</li>
+    <li><strong><code>&lt;article&gt;</code></strong> — Независимая, целостная часть сайта (например, новость, пост в блоге).</li>
+    <li><strong><code>&lt;section&gt;</code></strong> — Крупный раздел (например, глава в статье).</li>
+    <li><strong><code>&lt;aside&gt;</code></strong> — Боковая колонка (сайдбар), содержимое косвенно связанное с главным.</li>
+    <li><strong><code>&lt;footer&gt;</code></strong> — Подвал сайта. Обычно там копирайт, контакты.</li>
+</ul>
+
+<p><strong>Зачем это нужно?</strong></p>
+<ul>
+    <li><strong>Для SEO (поисковиков):</strong> поисковик лучше понимает структуру сайта.</li>
+    <li><strong>Для доступности:</strong> программы экранного чтения могут быстро перейти к главному контенту (<code>&lt;main&gt;</code>), пропустив меню.</li>
+</ul>
+
+<h2>Уровень 4: Работа с данными (Таблицы)</h2>
+
+<h3>8. Создание таблиц</h3>
+
+<p>Таблицы в HTML создаются рядами (строками). Сначала вы говорите начало строки, потом кладете в нее ячейки.</p>
+<ul>
+    <li><strong><code>&lt;table&gt;</code></strong> — контейнер таблицы.</li>
+    <li><strong><code>&lt;tr&gt;</code></strong> (table row) — строка.</li>
+    <li><strong><code>&lt;td&gt;</code></strong> (table data) — обычная ячейка.</li>
+    <li><strong><code>&lt;th&gt;</code></strong> (table header) — ячейка-заголовок (текст в ней жирный и по центру).</li>
+</ul>
+
+<p><strong>Простая таблица (2x2):</strong></p>
+
+<div class="code-block">
+<code>&lt;table border="1"&gt; &lt;!-- border="1" добавлен для наглядности, обычно рисуют CSS --&gt;<br>
+    &lt;tr&gt;<br>
+        &lt;th&gt;Имя&lt;/th&gt;<br>
+        &lt;th&gt;Возраст&lt;/th&gt;<br>
+    &lt;/tr&gt;<br>
+    &lt;tr&gt;<br>
+        &lt;td&gt;Анна&lt;/td&gt;<br>
+        &lt;td&gt;25&lt;/td&gt;<br>
+    &lt;/tr&gt;<br>
+    &lt;tr&gt;<br>
+        &lt;td&gt;Иван&lt;/td&gt;<br>
+        &lt;td&gt;30&lt;/td&gt;<br>
+    &lt;/tr&gt;<br>
+&lt;/table&gt;</code>
+</div>
+
+<p><strong>Структурные теги:</strong> для больших таблиц используют логические блоки:</p>
+<ul>
+    <li><strong><code>&lt;thead&gt;</code></strong> — для шапки.</li>
+    <li><strong><code>&lt;tbody&gt;</code></strong> — для основной массы данных.</li>
+    <li><strong><code>&lt;tfoot&gt;</code></strong> — для итогов (внизу).</li>
+</ul>
+
+<h3>9. Объединение ячеек</h3>
+
+<p>Иногда ячейка должна занимать место двух или трех. Это называется объединение.</p>
+<ul>
+    <li><strong>colspan</strong> — объединение по горизонтали (сколько столбцов занимает ячейка).</li>
+    <li><strong>rowspan</strong> — объединение по вертикали (сколько строк занимает ячейка).</li>
+</ul>
+
+<div class="code-block">
+<code>&lt;table border="1"&gt;<br>
+    &lt;tr&gt;<br>
+        &lt;th&gt;ФИО&lt;/th&gt;<br>
+        &lt;th colspan="2"&gt;Телефоны&lt;/th&gt; &lt;!-- Эта ячейка займет 2 колонки --&gt;<br>
+    &lt;/tr&gt;<br>
+    &lt;tr&gt;<br>
+        &lt;td&gt;Петров П.П.&lt;/td&gt;<br>
+        &lt;td&gt;8911...&lt;/td&gt;<br>
+        &lt;td&gt;8912...&lt;/td&gt;<br>
+    &lt;/tr&gt;<br>
+&lt;/table&gt;</code>
+</div>
+
+<p><strong>Результат:</strong> В первой строке будет всего две ячейки: "ФИО" и большая ячейка "Телефоны", которая растянута на два столбца.</p>
+
+<h2>Уровень 5: Интерактив (Формы)</h2>
+
+<h3>10. Основы форм (<code>&lt;form&gt;</code>)</h3>
+
+<p>Формы — это способ отправить данные с компьютера пользователя на сервер. Это лайки, комментарии, регистрация, заказ товара. <strong>Тег <code>&lt;form&gt;</code> — это контейнер.</strong> Сам по себе он не виден, но он говорит браузеру: данные из полей внутри меня нужно собрать и отправить.</p>
+
+<div class="code-block">
+<code>&lt;form action="/submit-form" method="post"&gt;<br>
+    &lt;!-- Здесь будут поля ввода --&gt;<br>
+&lt;/form&gt;</code>
+</div>
+
+<ul>
+    <li><strong>action</strong> — адрес программы на сервере, которая будет обрабатывать данные.</li>
+    <li><strong>method</strong> — способ отправки (get или post). Для простоты запомните: post — для паролей и больших данных, get — для поиска (данные будут видны в адресной строке).</li>
+</ul>
+
+<h3>11. Поля ввода (<code>&lt;input&gt;</code>)</h3>
+
+<p>Это самый популярный тег внутри формы. Он универсален и меняет свой вид в зависимости от атрибута <strong>type</strong>.</p>
+
+<ul>
+    <li><strong><code>type="text"</code></strong> — обычное поле для ввода строки.</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="text" name="username"&gt;</code>
+</div>
+
+<ul>
+    <li><strong><code>type="password"</code></strong> — поле для пароля (точки вместо букв).</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="password" name="userpass"&gt;</code>
+</div>
+
+<ul>
+    <li><strong><code>type="email"</code></strong> — поле для почты (мобильные браузеры подставят клавиатуру с @).</li>
+    <li><strong><code>type="number"</code></strong> — поле для чисел (со стрелочками +/-, нельзя ввести буквы).</li>
+    <li><strong><code>type="checkbox"</code></strong> — квадратик для галочки (выбор нескольких вариантов).</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="checkbox" name="hobby" value="music"&gt; Музыка<br>
+&lt;input type="checkbox" name="hobby" value="sport"&gt; Спорт</code>
+</div>
+
+<ul>
+    <li><strong><code>type="radio"</code></strong> — кружочки для выбора одного варианта из нескольких (одинаковый name).</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="radio" name="gender" value="male"&gt; Мужской<br>
+&lt;input type="radio" name="gender" value="female"&gt; Женский</code>
+</div>
+
+<ul>
+    <li><strong><code>type="file"</code></strong> — кнопка для загрузки файла.</li>
+</ul>
+
+<h3>12. Текстовые поля и списки</h3>
+
+<p><strong><code>&lt;textarea&gt;</code> — многострочный текст.</strong> Используется для комментариев, отзывов. В отличие от <code>&lt;input&gt;</code>, это парный тег.</p>
+
+<div class="code-block">
+<code>&lt;textarea name="comment" rows="5" cols="40"&gt;Текст по умолчанию&lt;/textarea&gt;</code>
+</div>
+
+<p><strong>rows</strong> — высота в строках, <strong>cols</strong> — ширина в символах.</p>
+
+<p><strong><code>&lt;select&gt;</code> — выпадающий список.</strong> Экономит место на экране.</p>
+
+<div class="code-block">
+<code>&lt;select name="city"&gt;<br>
+    &lt;option value="msk"&gt;Москва&lt;/option&gt;<br>
+    &lt;option value="spb"&gt;Санкт-Петербург&lt;/option&gt;<br>
+    &lt;option value="kaz" selected&gt;Казань&lt;/option&gt; &lt;!-- selected - выбран по умолчанию --&gt;<br>
+&lt;/select&gt;</code>
+</div>
+
+<h3>13. Кнопки и отправка</h3>
+
+<ul>
+    <li><strong><code>&lt;button&gt;</code></strong> — более гибкая кнопка (внутрь можно положить картинку или жирный текст).</li>
+    <li><strong><code>&lt;input type="submit"&gt;</code></strong> — классическая кнопка отправки.</li>
+</ul>
+
+<div class="code-block">
+<code>&lt;button type="submit"&gt;Отправить данные&lt;/button&gt;</code>
+</div>
+
+<p>или</p>
+
+<div class="code-block">
+<code>&lt;input type="submit" value="Отправить"&gt;</code>
+</div>
+
+<p><strong>Группировка полей:</strong> <code>&lt;fieldset&gt;</code> рисует рамку вокруг группы полей, а <code>&lt;legend&gt;</code> — заголовок этой группы.</p>
+
+<div class="code-block">
+<code>&lt;fieldset&gt;<br>
+    &lt;legend&gt;Контактные данные&lt;/legend&gt;<br>
+    Имя: &lt;input type="text" name="name"&gt;&lt;br&gt;<br>
+    Email: &lt;input type="email" name="email"&gt;<br>
+&lt;/fieldset&gt;</code>
+</div>
+
+<h2>Уровень 6: Атрибуты — детали деталей</h2>
+
+<h3>14. Глобальные атрибуты</h3>
+
+<p>Эти атрибуты можно добавить к <strong>любому</strong> HTML тегу.</p>
+
+<ul>
+    <li><strong>id</strong> — Уникальное имя элемента. На одной странице не может быть двух элементов с одинаковым id. Нужен для якорей, CSS и JavaScript.</li>
+</ul>
+<div class="code-block">
+<code>&lt;div id="header"&gt;&lt;/div&gt;</code>
+</div>
+
+<ul>
+    <li><strong>class</strong> — Имя класса. В отличие от id, классы могут повторяться. Нужен в основном для CSS, чтобы стилизовать группу элементов.</li>
+</ul>
+<div class="code-block">
+<code>&lt;div class="product-card"&gt;&lt;/div&gt;<br>
+&lt;div class="product-card"&gt;&lt;/div&gt; &lt;!-- Можно повторять --&gt;</code>
+</div>
+
+<ul>
+    <li><strong>title</strong> — Всплывающая подсказка при наведении мыши.</li>
+</ul>
+<div class="code-block">
+<code>&lt;p title="Это подсказка"&gt;Наведи на меня мышь&lt;/p&gt;</code>
+</div>
+
+<ul>
+    <li><strong>style</strong> — Позволяет написать CSS-стили прямо внутри тега (обычно так не делают, но для экспериментов пойдет).</li>
+</ul>
+<div class="code-block">
+<code>&lt;p style="color: blue; font-size: 20px;"&gt;Синий текст&lt;/p&gt;</code>
+</div>
+
+<h3>15. Специфические атрибуты (в основном для форм)</h3>
+
+<ul>
+    <li><strong>placeholder</strong> — Полупрозрачная подсказка внутри поля, которая исчезает, когда начинаешь печатать.</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="text" placeholder="Введите имя"&gt;</code>
+</div>
+
+<ul>
+    <li><strong>required</strong> — Поле обязательно для заполнения. Форму нельзя будет отправить, пока поле не заполнено.</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="text" required&gt;</code>
+</div>
+
+<ul>
+    <li><strong>disabled</strong> — Поле заблокировано (нельзя кликнуть, изменить, и данные с него не отправятся).</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="text" value="Неактивно" disabled&gt;</code>
+</div>
+
+<ul>
+    <li><strong>readonly</strong> — Поле только для чтения (посмотреть можно, изменить — нельзя, но данные отправятся).</li>
+</ul>
+<div class="code-block">
+<code>&lt;input type="text" value="Только чтение" readonly&gt;</code>
+</div>
+
+<h2>Бонус-трек: Что дальше?</h2>
+
+<p>Поздравляем! Вы изучили базовый синтаксис и основные теги. Но HTML редко используется сам по себе.</p>
+
+<ul>
+    <li><strong>CSS (Cascading Style Sheets):</strong> чтобы раскрасить этот "скелет", сделать красивые отступы, тени, анимацию и расположить всё красиво на странице. Подключается тегом <code>&lt;link&gt;</code> внутри <code>&lt;head&gt;</code>.</li>
+    <li><strong>JavaScript (JS):</strong> чтобы страница ожила: реагировала на клики, показывала всплывающие окна, подгружала данные без перезагрузки страницы. Подключается тегом <code>&lt;script&gt;</code>.</li>
+</ul>
+
+<p><strong>Этот фундамент — ваша база. С ней можно смело переходить к изучению CSS и верстке макетов. Удачи!</strong></p>
+    
+  <footer class="primary-footer-s container group">
+      <small>&copy; Skill Code</small>
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <!--
+        -->
+          <li><a href="speakers.html">HTML</a></li>
+          <!--
+        -->
+          <li><a href="schedule.html">CSS</a></li>
+          <!--
+        -->
+          <li><a href="venue.html">JAVASCRIPT</a></li>
+          <!--
+        --></ul>
+      </nav>
+    </footer>
+  </body>
+</html>

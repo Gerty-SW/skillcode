@@ -1,0 +1,1249 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Styles Conference</title>
+    <link rel="stylesheet" href="assets/stylesheets/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=cyrillic,latin"
+    />
+  </head>
+  <body>
+    <header class="primary-header container group">
+      <h1 class="logo">
+        <a href="index.html">Skill Code</a>
+      </h1>
+
+      <h3 class="tagline"></h3>
+
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <!--
+        -->
+          <li><a href="speakers.html">HTML</a></li>
+          <!--
+        -->
+          <li><a href="schedule.html">CSS</a></li>
+          <!--
+        -->
+          <li><a href="venue.html">JAVASCRIPT</a></li>
+          <!--
+        --></ul>
+      </nav>
+    </header>
+
+    <section class="row">
+      <!doctype html>
+      <html lang="ru">
+        <head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Полное руководство по CSS для начинающих</title>
+          <style>
+            body {
+              border-radius: 25%;
+              line-height: 1.6;
+              max-width: 100%;
+              margin: 0 auto;
+              padding: 20px;
+              color: #333;
+            }
+
+            h1 {
+              color: #333;
+              border-bottom: 2px solid #007bff;
+              padding-bottom: 10px;
+            }
+
+            h2 {
+              color: #444;
+              border-left: 5px solid #28a745;
+              padding-left: 15px;
+              margin-top: 40px;
+            }
+
+            h3 {
+              color: #555;
+              margin-top: 30px;
+            }
+
+            /* Делаем заголовки жирными */
+            h1,
+            h2,
+            h3 {
+              font-weight: bold;
+            }
+
+            h1 {
+              font-size: 28px;
+            }
+
+            h2 {
+              font-size: 24px;
+            }
+
+            h3 {
+              font-size: 20px;
+            }
+
+            p {
+              margin-bottom: 15px;
+            }
+
+            ul,
+            ol {
+              margin-bottom: 20px;
+              padding-left: 25px;
+            }
+
+            li {
+              margin-bottom: 5px;
+            }
+
+            /* Стили для блоков с кодом */
+            .code-block {
+              background-color: #f8f9fa;
+              border: 1px solid #e1e4e8;
+              border-radius: 6px;
+              padding: 16px;
+              margin: 20px 0;
+              font-family:
+                "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+                "Courier New", monospace;
+              font-size: 14px;
+              line-height: 1.45;
+              overflow-x: auto;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              border-left: 4px solid #28a745;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            }
+
+            /* Стили для тега code внутри блоков */
+            .code-block code {
+              font-family: inherit;
+              background-color: transparent;
+              padding: 0;
+              border: none;
+              color: #24292e;
+              display: block;
+            }
+
+            /* Стили для строчного кода */
+            p code,
+            li code {
+              background-color: #f3f4f6;
+              border-radius: 4px;
+              padding: 2px 6px;
+              font-family:
+                "SF Mono", Monaco, Consolas, "Courier New", monospace;
+              font-size: 0.9em;
+              color: #d14;
+              border: 1px solid #e1e4e8;
+            }
+
+            strong {
+              color: #222;
+            }
+
+            /* Дополнительные стили для примеров */
+            .note {
+              background-color: #fff3cd;
+              border-left: 4px solid #ffc107;
+              padding: 12px;
+              margin: 20px 0;
+              border-radius: 4px;
+            }
+
+            .demo-box {
+              background-color: #e9ecef;
+              border: 2px solid #28a745;
+              padding: 20px;
+              margin: 20px 0;
+              border-radius: 8px;
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Полное руководство по CSS для начинающих</h1>
+
+          <p>
+            <strong
+              >CSS (Cascading Style Sheets — каскадные таблицы стилей)</strong
+            >
+            — это язык, который отвечает за внешний вид сайта. Если HTML — это
+            скелет, то CSS — это кожа, одежда и макияж. С помощью CSS мы задаем
+            цвета, размеры, расположение элементов, анимацию и многое другое.
+          </p>
+
+          <div class="note">
+            <strong>Важно:</strong> CSS можно подключать тремя способами:
+            <ul>
+              <li>
+                <strong>Внешний файл:</strong>
+                <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+              </li>
+              <li>
+                <strong>Внутренний стиль:</strong>
+                <code>&lt;style&gt; ... &lt;/style&gt;</code> в секции
+                <code>&lt;head&gt;</code>
+              </li>
+              <li>
+                <strong>Инлайн-стили:</strong> атрибут
+                <code>style="..."</code> прямо в HTML-теге
+              </li>
+            </ul>
+          </div>
+
+          <h2>Уровень 1: Основы синтаксиса</h2>
+
+          <h3>1. Структура CSS-правила</h3>
+
+          <p>
+            Каждое CSS-правило состоит из двух частей:
+            <strong>селектора</strong> (к кому применяем) и
+            <strong>блока объявлений</strong> (что меняем).
+          </p>
+
+          <div class="code-block">
+            <code
+              >селектор {<br />
+              свойство1: значение1;<br />
+              свойство2: значение2;<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Пример:</strong></p>
+
+          <div class="code-block">
+            <code
+              >p {<br />
+              color: red;<br />
+              font-size: 16px;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            Этот код говорит: "Найди все параграфы <code>&lt;p&gt;</code> и
+            сделай их текст красным (<code>color: red</code>), а размер шрифта —
+            16 пикселей (<code>font-size: 16px</code>)".
+          </p>
+
+          <h3>2. Способы подключения CSS</h3>
+
+          <p><strong>Внешний файл (рекомендуемый способ):</strong></p>
+
+          <div class="code-block">
+            <code
+              >&lt;head&gt;<br />
+              &lt;link rel="stylesheet" href="style.css"&gt;<br />
+              &lt;/head&gt;</code
+            >
+          </div>
+
+          <p><strong>Внутренний стиль:</strong></p>
+
+          <div class="code-block">
+            <code
+              >&lt;head&gt;<br />
+              &lt;style&gt;<br />
+              p { color: blue; }<br />
+              &lt;/style&gt;<br />
+              &lt;/head&gt;</code
+            >
+          </div>
+
+          <p><strong>Инлайн-стили (используйте редко):</strong></p>
+
+          <div class="code-block">
+            <code
+              >&lt;p style="color: green; font-size: 20px;"&gt;Зеленый
+              текст&lt;/p&gt;</code
+            >
+          </div>
+
+          <h2>Уровень 2: Селекторы (учимся выбирать элементы)</h2>
+
+          <h3>3. Базовые селекторы</h3>
+
+          <p>
+            <strong>Селектор по тегу (элементу):</strong> выбирает все элементы
+            с указанным тегом.
+          </p>
+
+          <div class="code-block">
+            <code
+              >p { /* все параграфы */<br />
+              color: blue;<br />
+              }<br />
+              <br />
+              h1 { /* все заголовки h1 */<br />
+              text-align: center;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Селектор по классу (class):</strong> выбирает элементы с
+            определенным классом. Начинается с точки <code>.</code>.
+          </p>
+
+          <div class="code-block">
+            <code
+              >.warning { /* все элементы с class="warning" */<br />
+              color: orange;<br />
+              font-weight: bold;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Селектор по идентификатору (id):</strong> выбирает элемент с
+            конкретным id. Начинается с решетки <code>#</code>. Помните: id
+            должен быть уникальным!
+          </p>
+
+          <div class="code-block">
+            <code
+              >#header { /* элемент с id="header" */<br />
+              background-color: black;<br />
+              color: white;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Универсальный селектор (<code>*</code>):</strong> выбирает
+            все элементы на странице.
+          </p>
+
+          <div class="code-block">
+            <code
+              >* {<br />
+              margin: 0; /* убирает отступы у всех элементов */<br />
+              padding: 0;<br />
+              }</code
+            >
+          </div>
+
+          <h3>4. Комбинированные селекторы</h3>
+
+          <p>
+            <strong>Селектор потомка (пробел):</strong> выбирает элементы внутри
+            других элементов.
+          </p>
+
+          <div class="code-block">
+            <code
+              >div p { /* все &lt;p&gt; внутри &lt;div&gt; */<br />
+              margin-left: 20px;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Дочерний селектор (<code>&gt;</code>):</strong> выбирает
+            только прямых детей.
+          </p>
+
+          <div class="code-block">
+            <code
+              >ul > li { /* только &lt;li&gt;, которые прямые дети &lt;ul&gt;
+              */<br />
+              list-style-type: square;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Соседний селектор (<code>+</code>):</strong> выбирает
+            элемент, который идет сразу после другого.
+          </p>
+
+          <div class="code-block">
+            <code
+              >h2 + p { /* параграф, который идет сразу после h2 */<br />
+              font-style: italic;<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Селектор атрибута:</strong> выбирает элементы по наличию или
+            значению атрибута.
+          </p>
+
+          <div class="code-block">
+            <code
+              >input[type="text"] { /* все текстовые поля ввода */<br />
+              border: 1px solid blue;<br />
+              }<br />
+              <br />
+              a[target="_blank"] { /* ссылки, открывающиеся в новом окне */<br />
+              color: red;<br />
+              }</code
+            >
+          </div>
+
+          <h3>5. Группировка селекторов</h3>
+
+          <p>
+            Если нескольким селекторам нужны одинаковые стили, их можно
+            перечислить через запятую.
+          </p>
+
+          <div class="code-block">
+            <code
+              >h1, h2, h3 {<br />
+              font-family: Arial, sans-serif;<br />
+              color: navy;<br />
+              }</code
+            >
+          </div>
+
+          <h2>Уровень 3: Свойства и значения (работа с внешностью)</h2>
+
+          <h3>6. Работа с текстом</h3>
+
+          <p><strong>Основные свойства текста:</strong></p>
+          <ul>
+            <li>
+              <code>color</code> — цвет текста (можно указывать в hex, rgb,
+              rgba, названиях)
+            </li>
+            <li><code>font-size</code> — размер шрифта (px, em, rem, %)</li>
+            <li><code>font-family</code> — шрифт</li>
+            <li><code>font-weight</code> — жирность (normal, bold, 100-900)</li>
+            <li><code>font-style</code> — наклон (normal, italic)</li>
+            <li>
+              <code>text-align</code> — выравнивание (left, center, right,
+              justify)
+            </li>
+            <li>
+              <code>text-decoration</code> — подчеркивание (none, underline,
+              line-through)
+            </li>
+            <li><code>line-height</code> — межстрочный интервал</li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >p {<br />
+              color: #333;<br />
+              font-size: 16px;<br />
+              font-family: Arial, Helvetica, sans-serif;<br />
+              font-weight: normal;<br />
+              text-align: left;<br />
+              line-height: 1.5;<br />
+              }<br />
+              <br />
+              h1 {<br />
+              color: rgb(0, 100, 200);<br />
+              text-decoration: underline;<br />
+              font-weight: bold;<br />
+              }</code
+            >
+          </div>
+
+          <h3>7. Цвета и фон</h3>
+
+          <p><strong>Способы задания цвета:</strong></p>
+          <ul>
+            <li>
+              <strong>Имена:</strong> <code>red</code>, <code>blue</code>,
+              <code>green</code> и др.
+            </li>
+            <li>
+              <strong>HEX (шестнадцатеричный):</strong>
+              <code>#ff0000</code> (красный), <code>#00ff00</code> (зеленый)
+            </li>
+            <li><strong>RGB:</strong> <code>rgb(255, 0, 0)</code></li>
+            <li>
+              <strong>RGBA (с прозрачностью):</strong>
+              <code>rgba(255, 0, 0, 0.5)</code> (полупрозрачный красный)
+            </li>
+          </ul>
+
+          <p><strong>Свойства фона:</strong></p>
+          <ul>
+            <li><code>background-color</code> — цвет фона</li>
+            <li><code>background-image</code> — фоновое изображение</li>
+            <li><code>background-repeat</code> — повторение фона</li>
+            <li><code>background-position</code> — позиция фона</li>
+            <li><code>background-size</code> — размер фона</li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >body {<br />
+              background-color: #f0f0f0;<br />
+              }<br />
+              <br />
+              div {<br />
+              background-color: rgba(0, 150, 0, 0.2); /* полупрозрачный зеленый
+              */<br />
+              background-image: url('pattern.png');<br />
+              background-repeat: repeat-x;<br />
+              }</code
+            >
+          </div>
+
+          <h3>8. Блочная модель (Box Model)</h3>
+
+          <p>
+            Каждый элемент в CSS — это прямоугольный блок, который состоит из:
+          </p>
+          <ul>
+            <li><strong>Content</strong> — содержимое (текст, картинка)</li>
+            <li>
+              <strong>Padding</strong> — внутренний отступ (от содержимого до
+              границы)
+            </li>
+            <li><strong>Border</strong> — граница (рамка)</li>
+            <li>
+              <strong>Margin</strong> — внешний отступ (от границы до соседних
+              элементов)
+            </li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >div {<br />
+              width: 300px; /* ширина содержимого */<br />
+              height: 200px; /* высота содержимого */<br />
+              padding: 20px; /* внутренний отступ со всех сторон */<br />
+              border: 2px solid red; /* рамка */<br />
+              margin: 30px; /* внешний отступ со всех сторон */<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Можно задавать отступы по отдельности:</strong></p>
+          <ul>
+            <li>
+              <code>padding-top</code>, <code>padding-right</code>,
+              <code>padding-bottom</code>, <code>padding-left</code>
+            </li>
+            <li>
+              <code>margin-top</code>, <code>margin-right</code>,
+              <code>margin-bottom</code>, <code>margin-left</code>
+            </li>
+          </ul>
+
+          <p><strong>Сокращенная запись:</strong></p>
+          <div class="code-block">
+            <code
+              >/* 4 значения: верх, право, низ, лево */<br />
+              padding: 10px 20px 15px 25px;<br />
+              <br />
+              /* 3 значения: верх, право/лево, низ */<br />
+              margin: 10px 20px 15px;<br />
+              <br />
+              /* 2 значения: верх/низ, право/лево */<br />
+              padding: 10px 20px;<br />
+              <br />
+              /* 1 значение: все стороны */<br />
+              margin: 10px;</code
+            >
+          </div>
+
+          <h3>9. Рамки (borders)</h3>
+
+          <div class="code-block">
+            <code
+              >border: 1px solid black; /* толщина, стиль, цвет */<br />
+              <br />
+              /* Можно разделять */<br />
+              border-width: 2px;<br />
+              border-style: dashed; /* solid, dotted, dashed, double, groove,
+              ridge */<br />
+              border-color: blue;<br />
+              <br />
+              /* Только одна сторона */<br />
+              border-bottom: 3px dotted red;<br />
+              border-left: 5px solid green;</code
+            >
+          </div>
+
+          <p><strong>Скругление углов:</strong></p>
+          <div class="code-block">
+            <code
+              >border-radius: 10px; /* все углы */<br />
+              border-radius: 50%; /* круг (для квадратного элемента) */<br />
+              border-radius: 10px 20px; /* верхние левый/правый, нижние */</code
+            >
+          </div>
+
+          <h2>Уровень 4: Позиционирование и Layout</h2>
+
+          <h3>10. Свойство display</h3>
+
+          <p>
+            <code>display</code> определяет, как элемент ведет себя на странице.
+          </p>
+
+          <ul>
+            <li>
+              <strong><code>display: block</code></strong> — блочный элемент
+              (занимает всю ширину)
+            </li>
+            <li>
+              <strong><code>display: inline</code></strong> — строчный элемент
+              (ширина по содержимому)
+            </li>
+            <li>
+              <strong><code>display: inline-block</code></strong> — строчный, но
+              можно задавать ширину/высоту
+            </li>
+            <li>
+              <strong><code>display: none</code></strong> — элемент скрыт и не
+              занимает места
+            </li>
+            <li>
+              <strong><code>display: flex</code></strong> — гибкий контейнер
+              (flexbox)
+            </li>
+            <li>
+              <strong><code>display: grid</code></strong> — сетка (grid layout)
+            </li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >/* Превращаем ссылки в блоки */<br />
+              a {<br />
+              display: block;<br />
+              width: 200px;<br />
+              padding: 10px;<br />
+              background-color: #007bff;<br />
+              color: white;<br />
+              }</code
+            >
+          </div>
+
+          <h3>11. Позиционирование (position)</h3>
+
+          <p>
+            Свойство <code>position</code> определяет метод позиционирования
+            элемента.
+          </p>
+
+          <ul>
+            <li>
+              <strong><code>position: static</code></strong> — по умолчанию,
+              обычный поток документа
+            </li>
+            <li>
+              <strong><code>position: relative</code></strong> — относительно
+              своего обычного места
+            </li>
+            <li>
+              <strong><code>position: absolute</code></strong> — относительно
+              ближайшего позиционированного родителя
+            </li>
+            <li>
+              <strong><code>position: fixed</code></strong> — относительно окна
+              браузера (не двигается при скролле)
+            </li>
+            <li>
+              <strong><code>position: sticky</code></strong> — прилипает при
+              скролле
+            </li>
+          </ul>
+
+          <p>
+            Для позиционирования используются свойства: <code>top</code>,
+            <code>right</code>, <code>bottom</code>, <code>left</code>,
+            <code>z-index</code>.
+          </p>
+
+          <div class="code-block">
+            <code
+              >.relative {<br />
+              position: relative;<br />
+              top: 20px; /* сместится вниз на 20px от обычного места */<br />
+              left: 30px; /* сместится вправо на 30px */<br />
+              }<br />
+              <br />
+              .absolute {<br />
+              position: absolute;<br />
+              top: 0;<br />
+              right: 0; /* прижмется к правому верхнему углу родителя */<br />
+              }<br />
+              <br />
+              .fixed {<br />
+              position: fixed;<br />
+              bottom: 20px;<br />
+              right: 20px; /* кнопка в правом нижнем углу экрана */<br />
+              }</code
+            >
+          </div>
+
+          <h3>12. Flexbox (гибкая раскладка)</h3>
+
+          <p>
+            <strong>Flexbox</strong> — это современный способ расположения
+            элементов в строку или колонку. Идеален для одномерных макетов.
+          </p>
+
+          <p><strong>Родитель (flex-контейнер):</strong></p>
+          <div class="code-block">
+            <code
+              >.container {<br />
+              display: flex; /* включаем flexbox */<br />
+              flex-direction: row; /* направление: row (по умолчанию) или column
+              */<br />
+              justify-content: center; /* выравнивание по главной оси
+              (горизонтально) */<br />
+              align-items: center; /* выравнивание по поперечной оси
+              (вертикально) */<br />
+              gap: 20px; /* расстояние между элементами */<br />
+              flex-wrap: wrap; /* перенос на новую строку */<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Значения <code>justify-content</code>:</strong>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>
+          </p>
+
+          <p>
+            <strong>Значения <code>align-items</code>:</strong>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>stretch</code>, <code>baseline</code>
+          </p>
+
+          <p><strong>Дети (flex-элементы):</strong></p>
+          <div class="code-block">
+            <code
+              >.item {<br />
+              flex: 1; /* элемент растягивается */<br />
+              align-self: center; /* переопределить выравнивание для конкретного
+              элемента */<br />
+              order: 2; /* порядок элемента (по умолчанию 0) */<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Пример центрирования:</strong></p>
+          <div class="code-block">
+            <code
+              >.parent {<br />
+              display: flex;<br />
+              justify-content: center;<br />
+              align-items: center;<br />
+              height: 100vh; /* высота на весь экран */<br />
+              }</code
+            >
+          </div>
+
+          <h3>13. Grid (сетка)</h3>
+
+          <p>
+            <strong>CSS Grid</strong> — мощная система для двумерных макетов
+            (строки и колонки одновременно).
+          </p>
+
+          <div class="code-block">
+            <code
+              >.grid-container {<br />
+              display: grid;<br />
+              grid-template-columns: 1fr 2fr 1fr; /* три колонки: вторая в 2
+              раза шире */<br />
+              grid-template-rows: 100px auto 200px; /* три строки */<br />
+              gap: 20px; /* отступы между ячейками */<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Единицы измерения в Grid:</strong></p>
+          <ul>
+            <li><code>px</code> — пиксели</li>
+            <li><code>%</code> — проценты</li>
+            <li><code>fr</code> — дробная единица (flexible fraction)</li>
+            <li><code>auto</code> — по содержимому</li>
+            <li><code>minmax(100px, 1fr)</code> — от минимума до максимума</li>
+          </ul>
+
+          <p><strong>Размещение элементов:</strong></p>
+          <div class="code-block">
+            <code
+              >.item1 {<br />
+              grid-column: 1 / 3; /* занимает колонки с 1 по 3 */<br />
+              grid-row: 1 / 2; /* занимает первую строку */<br />
+              }<br />
+              <br />
+              .item2 {<br />
+              grid-column: span 2; /* растянуться на 2 колонки */<br />
+              }</code
+            >
+          </div>
+
+          <h2>Уровень 5: Адаптивность и медиа-запросы</h2>
+
+          <h3>14. Медиа-запросы (Media Queries)</h3>
+
+          <p>
+            <strong>Медиа-запросы</strong> позволяют применять разные стили в
+            зависимости от характеристик устройства (ширина экрана, ориентация и
+            т.д.).
+          </p>
+
+          <div class="code-block">
+            <code
+              >/* Базовые стили для мобильных */<br />
+              body { font-size: 14px; }<br />
+              <br />
+              /* Для планшетов (ширина от 768px) */<br />
+              @media (min-width: 768px) {<br />
+              body { font-size: 16px; }<br />
+              }<br />
+              <br />
+              /* Для десктопов (ширина от 1200px) */<br />
+              @media (min-width: 1200px) {<br />
+              body { font-size: 18px; }<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Другие условия:</strong></p>
+          <ul>
+            <li><code>max-width</code> — максимальная ширина</li>
+            <li><code>orientation: portrait</code> — книжная ориентация</li>
+            <li><code>orientation: landscape</code> — альбомная ориентация</li>
+            <li>
+              <code>hover: hover</code> — устройство с поддержкой наведения
+            </li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >/* Для устройств с мышью (не для телефонов) */<br />
+              @media (hover: hover) {<br />
+              button:hover {<br />
+              background-color: darkblue;<br />
+              }<br />
+              }<br />
+              <br />
+              /* Альбомная ориентация */<br />
+              @media (orientation: landscape) {<br />
+              .sidebar {<br />
+              width: 30%;<br />
+              }<br />
+              }</code
+            >
+          </div>
+
+          <h3>15. Адаптивная верстка</h3>
+
+          <p><strong>Принципы адаптивной верстки:</strong></p>
+          <ul>
+            <li>
+              Используйте относительные единицы (<code>%</code>,
+              <code>vw</code>, <code>vh</code>, <code>em</code>,
+              <code>rem</code>) вместо пикселей
+            </li>
+            <li>Применяйте медиа-запросы для разных устройств</li>
+            <li>Делайте изображения гибкими</li>
+          </ul>
+
+          <p><strong>Гибкие изображения:</strong></p>
+          <div class="code-block">
+            <code
+              >img {<br />
+              max-width: 100%; /* изображение не вылезет за родителя */<br />
+              height: auto; /* сохраняет пропорции */<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Относительные единицы:</strong></p>
+          <ul>
+            <li><code>vw</code> — 1% от ширины окна (viewport width)</li>
+            <li><code>vh</code> — 1% от высоты окна</li>
+            <li><code>em</code> — относительно размера шрифта родителя</li>
+            <li>
+              <code>rem</code> — относительно размера шрифта корневого элемента
+              (<code>html</code>)
+            </li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >.fullscreen {<br />
+              width: 100vw; /* на всю ширину окна */<br />
+              height: 100vh; /* на всю высоту окна */<br />
+              }<br />
+              <br />
+              html { font-size: 16px; }<br />
+              h1 { font-size: 2rem; } /* 32px (16px * 2) */<br />
+              p { font-size: 1rem; } /* 16px */</code
+            >
+          </div>
+
+          <h2>Уровень 6: Продвинутые темы</h2>
+
+          <h3>16. Псевдоклассы и псевдоэлементы</h3>
+
+          <p>
+            <strong>Псевдоклассы (<code>:</code>)</strong> — определяют
+            состояние элемента.
+          </p>
+
+          <div class="code-block">
+            <code
+              >/* Ссылки */<br />
+              a:link { color: blue; } /* непосещенная ссылка */<br />
+              a:visited { color: purple; } /* посещенная ссылка */<br />
+              a:hover { color: red; } /* при наведении мыши */<br />
+              a:active { color: green; } /* в момент клика */<br />
+              <br />
+              /* Формы */<br />
+              input:focus {<br />
+              border-color: blue;<br />
+              outline: none;<br />
+              }<br />
+              <br />
+              input:disabled {<br />
+              background-color: #eee;<br />
+              }<br />
+              <br />
+              /* Структурные */<br />
+              li:first-child { font-weight: bold; } /* первый элемент */<br />
+              li:last-child { border-bottom: none; } /* последний элемент */<br />
+              li:nth-child(odd) { background: #f0f0f0; } /* нечетные элементы
+              */<br />
+              li:nth-child(3) { color: red; } /* третий элемент */</code
+            >
+          </div>
+
+          <p>
+            <strong>Псевдоэлементы (<code>::</code>)</strong> — создают
+            виртуальные элементы.
+          </p>
+
+          <div class="code-block">
+            <code
+              >/* Первая буква или строка */<br />
+              p::first-letter {<br />
+              font-size: 3em;<br />
+              color: red;<br />
+              }<br />
+              <br />
+              p::first-line {<br />
+              font-weight: bold;<br />
+              }<br />
+              <br />
+              /* Добавление контента до и после */<br />
+              a::before {<br />
+              content: "→ ";<br />
+              }<br />
+              <br />
+              a::after {<br />
+              content: " ←";<br />
+              }<br />
+              <br />
+              /* Для очистки float */<br />
+              .clearfix::after {<br />
+              content: "";<br />
+              display: table;<br />
+              clear: both;<br />
+              }</code
+            >
+          </div>
+
+          <h3>17. Анимации и трансформации</h3>
+
+          <p><strong>Трансформации (transform):</strong></p>
+          <div class="code-block">
+            <code
+              >.transform {<br />
+              transform: rotate(45deg); /* поворот */<br />
+              transform: scale(1.5); /* увеличение */<br />
+              transform: translate(50px, 20px); /* перемещение */<br />
+              transform: skew(10deg); /* наклон */<br />
+              /* можно комбинировать */<br />
+              transform: rotate(45deg) scale(1.2);<br />
+              }</code
+            >
+          </div>
+
+          <p>
+            <strong>Переходы (transitions):</strong> плавное изменение свойств.
+          </p>
+
+          <div class="code-block">
+            <code
+              >.button {<br />
+              background-color: blue;<br />
+              transition: background-color 0.3s ease;<br />
+              }<br />
+              <br />
+              .button:hover {<br />
+              background-color: darkblue;<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Параметры transition:</strong></p>
+          <ul>
+            <li><code>transition-property</code> — что меняем</li>
+            <li><code>transition-duration</code> — длительность</li>
+            <li>
+              <code>transition-timing-function</code> — функция времени (ease,
+              linear, ease-in, ease-out)
+            </li>
+            <li><code>transition-delay</code> — задержка</li>
+          </ul>
+
+          <div class="code-block">
+            <code
+              >.box {<br />
+              width: 100px;<br />
+              height: 100px;<br />
+              background: red;<br />
+              transition: width 0.5s ease, height 1s linear 0.2s;<br />
+              }<br />
+              <br />
+              .box:hover {<br />
+              width: 200px;<br />
+              height: 200px;<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Ключевые кадры (keyframes) — сложная анимация:</strong></p>
+
+          <div class="code-block">
+            <code
+              >@keyframes slidein {<br />
+              from {<br />
+              transform: translateX(-100%);<br />
+              opacity: 0;<br />
+              }<br />
+              to {<br />
+              transform: translateX(0);<br />
+              opacity: 1;<br />
+              }<br />
+              }<br />
+              <br />
+              @keyframes bounce {<br />
+              0% { transform: translateY(0); }<br />
+              50% { transform: translateY(-50px); }<br />
+              100% { transform: translateY(0); }<br />
+              }<br />
+              <br />
+              .animated {<br />
+              animation-name: bounce;<br />
+              animation-duration: 1s;<br />
+              animation-iteration-count: infinite;<br />
+              animation-timing-function: ease;<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Сокращенная запись анимации:</strong></p>
+          <div class="code-block">
+            <code
+              >.element {<br />
+              animation: bounce 1s ease infinite;<br />
+              }</code
+            >
+          </div>
+
+          <h3>18. Переменные в CSS (Custom Properties)</h3>
+
+          <p>
+            <strong>CSS-переменные</strong> позволяют хранить значения для
+            повторного использования.
+          </p>
+
+          <div class="code-block">
+            <code
+              >:root {<br />
+              --main-color: #007bff;<br />
+              --secondary-color: #6c757d;<br />
+              --font-size: 16px;<br />
+              --spacing: 20px;<br />
+              }<br />
+              <br />
+              .button {<br />
+              background-color: var(--main-color);<br />
+              color: white;<br />
+              padding: var(--spacing);<br />
+              font-size: var(--font-size);<br />
+              }<br />
+              <br />
+              .alert {<br />
+              border: 2px solid var(--main-color);<br />
+              margin: var(--spacing);<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Переменные с запасным значением:</strong></p>
+          <div class="code-block">
+            <code
+              >.text {<br />
+              color: var(--text-color, black); /* если --text-color не задан,
+              будет black */<br />
+              }</code
+            >
+          </div>
+
+          <h3>19. Единицы измерения и специфичность</h3>
+
+          <p><strong>Специфичность (важность селекторов):</strong></p>
+          <p>
+            Когда несколько правил применяются к одному элементу, побеждает
+            самое специфичное:
+          </p>
+          <ol>
+            <li><strong>Инлайн-стили</strong> (самые сильные)</li>
+            <li><strong>ID</strong> (<code>#header</code>)</li>
+            <li>
+              <strong>Классы, атрибуты, псевдоклассы</strong>
+              (<code>.menu</code>, <code>:hover</code>)
+            </li>
+            <li>
+              <strong>Теги и псевдоэлементы</strong> (<code>p</code>,
+              <code>::before</code>) (самые слабые)
+            </li>
+          </ol>
+
+          <p>
+            <strong>Важность (<code>!important</code>):</strong> переопределяет
+            всё, но используйте редко!
+          </p>
+
+          <div class="code-block">
+            <code
+              >p {<br />
+              color: red !important; /* это перебьет даже инлайн-стили */<br />
+              }</code
+            >
+          </div>
+
+          <h2>Бонус-трек: Практические примеры</h2>
+
+          <h3>20. Типовые задачи</h3>
+
+          <p><strong>Центрирование элемента:</strong></p>
+          <div class="code-block">
+            <code
+              >/* Горизонтально */<br />
+              .block {<br />
+              margin: 0 auto;<br />
+              width: 300px;<br />
+              }<br />
+              <br />
+              /* Вертикально и горизонтально (flex) */<br />
+              .parent {<br />
+              display: flex;<br />
+              justify-content: center;<br />
+              align-items: center;<br />
+              height: 100vh;<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Трехколоночный макет:</strong></p>
+          <div class="code-block">
+            <code
+              >.container {<br />
+              display: grid;<br />
+              grid-template-columns: 1fr 2fr 1fr;<br />
+              gap: 20px;<br />
+              }<br />
+              <br />
+              @media (max-width: 768px) {<br />
+              .container {<br />
+              grid-template-columns: 1fr;<br />
+              }<br />
+              }</code
+            >
+          </div>
+
+          <p><strong>Карточка товара с hover-эффектом:</strong></p>
+          <div class="code-block">
+            <code
+              >.card {<br />
+              width: 250px;<br />
+              border: 1px solid #ddd;<br />
+              border-radius: 8px;<br />
+              padding: 15px;<br />
+              transition: box-shadow 0.3s ease;<br />
+              }<br />
+              <br />
+              .card:hover {<br />
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);<br />
+              }<br />
+              <br />
+              .card img {<br />
+              width: 100%;<br />
+              height: auto;<br />
+              transition: transform 0.3s ease;<br />
+              }<br />
+              <br />
+              .card:hover img {<br />
+              transform: scale(1.05);<br />
+              }</code
+            >
+          </div>
+
+          <h2>Что дальше?</h2>
+
+          <p>Поздравляем! Вы изучили основы CSS. Теперь вы можете:</p>
+          <ul>
+            <li>
+              <strong>Изучить препроцессоры</strong> (Sass, Less) — они делают
+              CSS еще удобнее
+            </li>
+            <li>
+              <strong>Освоить CSS-фреймворки</strong> (Bootstrap, Tailwind) —
+              готовые решения
+            </li>
+            <li><strong>Изучить продвинутые техники анимации</strong></li>
+            <li><strong>Практиковаться на реальных макетах</strong></li>
+          </ul>
+
+          <p>
+            <strong>Помните:</strong> лучший способ выучить CSS — верстать
+            реальные проекты. Начните с простых макетов и постепенно усложняйте
+            задачи. Удачи!
+          </p>
+        </body>
+      </html>
+    </section>
+
+    <footer class="primary-footer container group">
+      <small>&copy; Skill Code</small>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <!--
+        -->
+          <li><a href="speakers.html">HTML</a></li>
+          <!--
+        -->
+          <li><a href="schedule.html">CSS</a></li>
+          <!--
+        -->
+          <li><a href="venue.html">JAVASCRIPT</a></li>
+          <!--
+        --></ul>
+      </nav>
+    </footer>
+  </body>
+</html>
