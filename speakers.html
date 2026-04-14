@@ -2,40 +2,46 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Styles Conference</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Code — HTML</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=cyrillic,latin">
 </head>
 <body>
 
-  <header class="primary-header container group">
-    <h1 class="logo">
-      <a href="index.html">Skill Code</a>
-    </h1>
-	
-    <h3 class="tagline"> </h3>
-	
-    <nav class="nav primary-nav">
-      <nav class="nav primary-nav">
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <!--
+  <header class="primary-header container">
+    <div class="primary-header-inner">
+      <div class="primary-header-main group">
+        <div class="primary-header-accent" aria-hidden="true"></div>
+        <h1 class="logo">
+          <a href="index.html">Skill Code</a>
+        </h1>
+
+        <h3 class="tagline"> </h3>
+
+        <nav class="nav primary-nav">
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <!--
         -->
-          <li><a href="speakers.html">HTML</a></li>
-          <!--
+            <li><a href="speakers.html">HTML</a></li>
+            <!--
         -->
-          <li><a href="schedule.html">CSS</a></li>
-          <!--
+            <li><a href="schedule.html">CSS</a></li>
+            <!--
         -->
-          <li><a href="venue.html">JAVASCRIPT</a></li>
-          <!--
+            <li><a href="venue.html">JAVASCRIPT</a></li>
+            <!--
         --></ul>
-      </nav>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <section class="row">
     <style>
-        body {
+        .docs-article {
             line-height: 1.6;
             max-width: 100%;
             margin: 0 auto;
@@ -43,56 +49,59 @@
             color: #333;
         }
         
-        h1 {
+        .docs-article h1 {
             color: #333;
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
         }
         
-        h2 {
+        .docs-article h2 {
             color: #444;
             border-left: 5px solid #007bff;
             padding-left: 15px;
             margin-top: 40px;
         }
         
-        h3 {
+        .docs-article h3 {
             color: #555;
             margin-top: 30px;
         }
         
         /* Делаем заголовки жирными */
-        h1, h2, h3 {
+        .docs-article h1,
+        .docs-article h2,
+        .docs-article h3 {
             font-weight: bold;
         }
         
-        h1 {
+        .docs-article h1 {
             font-size: 28px;
         }
         
-        h2 {
+        .docs-article h2 {
             font-size: 24px;
         }
         
-        h3 {
+        .docs-article h3 {
             font-size: 20px;
         }
         
-        p {
+        .docs-article p {
             margin-bottom: 15px;
         }
         
-        ul, ol {
+        .docs-article ul,
+        .docs-article ol {
             margin-bottom: 20px;
             padding-left: 25px;
         }
         
-        li {
+        .docs-article li {
             margin-bottom: 5px;
         }
         
         /* Стили для блоков с кодом */
-        .code-block {
+        .docs-article .code-block {
             background-color: #f8f9fa;
             border: 1px solid #e1e4e8;
             border-radius: 6px;
@@ -109,7 +118,7 @@
         }
         
         /* Стили для тега code внутри блоков */
-        .code-block code {
+        .docs-article .code-block code {
             font-family: inherit;
             background-color: transparent;
             padding: 0;
@@ -119,7 +128,8 @@
         }
         
         /* Стили для строчного кода */
-        p code, li code {
+        .docs-article p code,
+        .docs-article li code {
             background-color: #f3f4f6;
             border-radius: 4px;
             padding: 2px 6px;
@@ -129,11 +139,12 @@
             border: 1px solid #e1e4e8;
         }
         
-        strong {
+        .docs-article strong {
             color: #222;
         }
     </style>
-</head>
+
+<div class="docs-article">
 
 <h1>Полное руководство по HTML для начинающих</h1>
 
@@ -579,10 +590,14 @@
 </ul>
 
 <p><strong>Этот фундамент — ваша база. С ней можно смело переходить к изучению CSS и верстке макетов. Удачи!</strong></p>
-    
-  <footer class="primary-footer-s container group">
+
+</div>
+
+  </section>
+
+  <footer class="primary-footer container group">
       <small>&copy; Skill Code</small>
-      <nav class="nav primary-nav">
+      <nav class="nav">
         <ul>
           <li><a href="index.html">Главная</a></li>
           <!--
@@ -598,5 +613,7 @@
         --></ul>
       </nav>
     </footer>
+    <script defer src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
+    <script src="assets/javascripts/main.js" defer></script>
   </body>
 </html>

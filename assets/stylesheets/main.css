@@ -133,6 +133,11 @@ table {
   Пользовательские стили
   ========================================
 */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   background: #293f50;
   color: #888;
@@ -143,6 +148,189 @@ body {
     Helvetica,
     Arial,
     sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Интерактивность и анимации (JS: assets/javascripts/main.js) */
+/* scale на .primary-header-main (полоска + контент); .primary-header-inner — только тень и скругление. */
+.primary-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #293f50;
+}
+/* Полоска на всю ширину внутри масштабируемого блока — уменьшается вместе с шапкой */
+.primary-header-accent {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #648880;
+  border-radius: 3px 3px 0 0;
+  -webkit-transition:
+    height 0.5s cubic-bezier(0.22, 1, 0.32, 1),
+    border-radius 0.5s cubic-bezier(0.22, 1, 0.32, 1);
+  transition:
+    height 0.5s cubic-bezier(0.22, 1, 0.32, 1),
+    border-radius 0.5s cubic-bezier(0.22, 1, 0.32, 1);
+}
+/* Внешняя оболочка: фон, скругление и тень — без transform */
+.primary-header-inner {
+  background: #293f50;
+  border-radius: 0;
+  -webkit-transition:
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.32, 1),
+    border-radius 0.5s cubic-bezier(0.22, 1, 0.32, 1);
+  transition:
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.32, 1),
+    border-radius 0.5s cubic-bezier(0.22, 1, 0.32, 1);
+}
+.primary-header.is-scrolled .primary-header-inner {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+  border-radius: 14px 14px 18px 18px;
+}
+/* Масштаб только здесь: полоска + логотип + меню уменьшаются вместе */
+.primary-header-main {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.22, 1, 0.32, 1);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.32, 1);
+}
+.primary-header.is-scrolled .primary-header-main {
+  -webkit-transform: scale(0.94);
+  -ms-transform: scale(0.94);
+  transform: scale(0.94);
+}
+.primary-header.is-scrolled .primary-header-accent {
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.primary-nav a.is-current {
+  color: #648880;
+  box-shadow: 0 2px 0 0 #648880;
+}
+
+[data-reveal]:not(.teaser) {
+  opacity: 0;
+  -webkit-transform: translateY(22px);
+  -ms-transform: translateY(22px);
+  transform: translateY(22px);
+  -webkit-transition:
+    opacity 0.6s ease,
+    -webkit-transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+[data-reveal]:not(.teaser).is-visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Карточки: наклон по курсору без transition на transform (иначе лаг) */
+.teaser {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  -webkit-transform: perspective(720px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform: perspective(720px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  will-change: transform;
+}
+.teaser[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+.teaser[data-reveal].is-visible {
+  opacity: 1;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: #648880;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  -webkit-transform: translateY(12px);
+  -ms-transform: translateY(12px);
+  transform: translateY(12px);
+  pointer-events: none;
+  -webkit-transition:
+    opacity 0.3s ease,
+    -webkit-transform 0.3s ease,
+    background 0.2s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.2s ease;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: #77a198;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal]:not(.teaser) {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .teaser[data-reveal] {
+    opacity: 1;
+    transition: none;
+  }
+  .teaser {
+    transform: none;
+  }
+  .primary-header-inner {
+    transition: none;
+    box-shadow: none !important;
+  }
+  .primary-header.is-scrolled .primary-header-inner {
+    border-radius: 0 !important;
+  }
+  .primary-header-main {
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    transform: none !important;
+  }
+  .primary-header-accent,
+  .primary-header.is-scrolled .primary-header-accent {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .back-to-top {
+    transition: none;
+  }
 }
 
 /*
@@ -161,7 +349,59 @@ body {
 .container,
 .grid {
   margin: 0 auto;
-  width: 960px;
+  max-width: 960px;
+  width: 100%;
+}
+
+/* Главная: три колонки в один ряд (flex убирает зазоры inline-block) */
+.home-teasers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.home-teasers .col-1-3 {
+  width: auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.home-teasers .teaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.home-teasers .teaser > h5 {
+  width: 100%;
+}
+.home-teasers .teaser > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.home-teasers .teaser img {
+  width: 140px;
+  height: 140px;
+  max-width: 140px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  margin: 0 auto 22px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 .container {
   padding-left: 30px;
@@ -211,7 +451,10 @@ body {
 
 .row,
 .row-alt {
-  min-width: 960px;
+  min-width: 0;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .row {
   border-radius: 10px;
@@ -309,9 +552,6 @@ p a {
 .primary-footer a {
   color: #fff;
 }
-.primary-footer-s a {
-  color: #604f4f;
-}
 .primary-header a:hover,
 .primary-footer a:hover {
   color: #648880;
@@ -358,7 +598,7 @@ p a {
 */
 
 .logo {
-  border-top: 4px solid #648880;
+  border-top: 0;
   float: left;
   font-size: 48px;
   font-weight: 100;
@@ -590,4 +830,156 @@ table h4 {
 }
 .schedule-offset {
   color: #a9b2b9;
+}
+
+/*
+  ========================================
+  Адаптивность (ширина экрана / устройства)
+  ========================================
+*/
+
+@media screen and (max-width: 920px) {
+  .logo {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  .hero {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    float: none;
+    text-align: center;
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+  .tagline {
+    margin: 8px 0 12px;
+    text-align: center;
+  }
+  .primary-nav {
+    clear: both;
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 14px;
+  }
+  .primary-nav .nav,
+  nav.primary-nav {
+    text-align: center;
+  }
+  .hero {
+    padding: 20px 20px 40px;
+    line-height: 1.35;
+  }
+  .hero h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .hero p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .row {
+    padding: 40px 12px 32px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .primary-footer {
+    text-align: center;
+  }
+  .primary-footer small {
+    float: none;
+    display: block;
+    margin-bottom: 18px;
+  }
+  .primary-footer .nav {
+    text-align: center;
+  }
+  .nav li {
+    margin: 0 6px 8px;
+  }
+  table {
+    font-size: 14px;
+  }
+  thead th {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  th {
+    padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-teasers {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .home-teasers .col-1-3 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-teasers .teaser img {
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .grid,
+  .col-1-3,
+  .col-2-3 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .logo {
+    font-size: 32px;
+    letter-spacing: 0.25px;
+  }
+  .primary-nav {
+    font-size: 11px;
+    letter-spacing: 0.2px;
+  }
+  .nav li {
+    margin: 0 4px 6px;
+  }
+  .back-to-top {
+    right: 12px;
+    bottom: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
+
+/* Длинные строки кода в статьях — прокрутка по горизонтали */
+.docs-article .code-block,
+.docs-article pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  word-wrap: break-word;
 }
